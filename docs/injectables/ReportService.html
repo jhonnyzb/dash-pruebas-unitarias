@@ -1,0 +1,1715 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>valepro-dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">valepro-dashboards documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >ReportService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/infrastructure/services/report.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#baseUrl" >baseUrl</a>
+                            </li>
+                            <li>
+                                <a href="#http" >http</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getAgencies" >getAgencies</a>
+                            </li>
+                            <li>
+                                <a href="#getInfoAdminFinally" >getInfoAdminFinally</a>
+                            </li>
+                            <li>
+                                <a href="#getInfoAffiliateFinally" >getInfoAffiliateFinally</a>
+                            </li>
+                            <li>
+                                <a href="#getInfoCountAffiliateFinally" >getInfoCountAffiliateFinally</a>
+                            </li>
+                            <li>
+                                <a href="#getInfoRanking" >getInfoRanking</a>
+                            </li>
+                            <li>
+                                <a href="#getPeriods" >getPeriods</a>
+                            </li>
+                            <li>
+                                <a href="#getRegional" >getRegional</a>
+                            </li>
+                            <li>
+                                <a href="#getReportAdmin" >getReportAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#getReportAffiliate" >getReportAffiliate</a>
+                            </li>
+                            <li>
+                                <a href="#getSegments" >getSegments</a>
+                            </li>
+                            <li>
+                                <a href="#getSelector" >getSelector</a>
+                            </li>
+                            <li>
+                                <a href="#getSelectors" >getSelectors</a>
+                            </li>
+                            <li>
+                                <a href="#getSelectorsAgencies" >getSelectorsAgencies</a>
+                            </li>
+                            <li>
+                                <a href="#getSelectorsFinally" >getSelectorsFinally</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAgencies"></a>
+                    <span class="name">
+                        <span ><b>getAgencies</b></span>
+                        <a href="#getAgencies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAgencies(regionalsIds: number[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="308"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:308</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene las agencias según los identificadores de las regionales.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>regionalsIds</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>[]</code>
+                                            </td>
+
+                                            <td>
+                                                    <ul>
+<li>Los identificadores de las regionales (opcional).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;AgenciesModel[]&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con un arreglo de modelos de agencias.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfoAdminFinally"></a>
+                    <span class="name">
+                        <span ><b>getInfoAdminFinally</b></span>
+                        <a href="#getInfoAdminFinally"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getInfoAdminFinally(periodId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, data: <a href="../classes/RequestIndicatorsAdmin.html" target="_self">RequestIndicatorsAdmin</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="210"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:210</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la información administrativa final.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>periodId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del período.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/RequestIndicatorsAdmin.html" target="_self" >RequestIndicatorsAdmin</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Los datos de los indicadores administrativos.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;CompliancesModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con el modelo de cumplimientos.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfoAffiliateFinally"></a>
+                    <span class="name">
+                        <span ><b>getInfoAffiliateFinally</b></span>
+                        <a href="#getInfoAffiliateFinally"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getInfoAffiliateFinally(period: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, idCount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="185"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:185</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la información de cumplimiento del afiliado finalmente.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>period</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El período de tiempo.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>idCount</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID de la cuenta.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;CompliancesModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con el código de identificación, el mensaje y los datos de cumplimiento.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfoCountAffiliateFinally"></a>
+                    <span class="name">
+                        <span ><b>getInfoCountAffiliateFinally</b></span>
+                        <a href="#getInfoCountAffiliateFinally"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getInfoCountAffiliateFinally(countId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="327"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:327</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la información del recuento de afiliados finalmente para un ID de recuento dado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>countId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del recuento.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;InfoCountAfiliateFinallyModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una instancia de ResponseBase con la información del recuento de afiliados finalmente.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfoRanking"></a>
+                    <span class="name">
+                        <span ><b>getInfoRanking</b></span>
+                        <a href="#getInfoRanking"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getInfoRanking(periodId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, idCount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="236"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:236</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la información de clasificación de afiliados.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>periodId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del período.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>idCount</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del contador.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;AffiliateRanking&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con la clasificación de afiliados.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPeriods"></a>
+                    <span class="name">
+                        <span ><b>getPeriods</b></span>
+                        <a href="#getPeriods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPeriods()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="254"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:254</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los períodos.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;PeriodsModel[]&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un Observable que emite una respuesta que contiene un arreglo de objetos PeriodsModel.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRegional"></a>
+                    <span class="name">
+                        <span ><b>getRegional</b></span>
+                        <a href="#getRegional"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getRegional()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="290"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:290</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la información regional.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;RegionalModel[]&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con un arreglo de modelos regionales.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getReportAdmin"></a>
+                    <span class="name">
+                        <span ><b>getReportAdmin</b></span>
+                        <a href="#getReportAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getReportAdmin(document: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: <a href="../classes/RequestIndicatorsAdmin.html" target="_self">RequestIndicatorsAdmin</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un informe administrativo.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>document</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El documento de identificación.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/RequestIndicatorsAdmin.html" target="_self" >RequestIndicatorsAdmin</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Los datos de los indicadores de solicitud administrativa.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;CompliancesModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta base con el modelo de cumplimientos.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getReportAffiliate"></a>
+                    <span class="name">
+                        <span ><b>getReportAffiliate</b></span>
+                        <a href="#getReportAffiliate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getReportAffiliate(document: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un informe de afiliado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>document</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Documento de identificación del afiliado.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;CompliancesModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con el código de identificación, el mensaje y los datos del informe de cumplimiento.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSegments"></a>
+                    <span class="name">
+                        <span ><b>getSegments</b></span>
+                        <a href="#getSegments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSegments()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="272"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:272</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los segmentos.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;SegmentsModel[]&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con un arreglo de modelos de segmentos.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSelector"></a>
+                    <span class="name">
+                        <span ><b>getSelector</b></span>
+                        <a href="#getSelector"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSelector()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el selector de cumplimiento de filtros.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;SelectorResponseModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con el selector de cumplimiento de filtros.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSelectors"></a>
+                    <span class="name">
+                        <span ><b>getSelectors</b></span>
+                        <a href="#getSelectors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSelectors(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="121"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los selectores para un tipo específico.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>type</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El tipo de selector a obtener.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;SelectorResponseModel1&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con los selectores.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSelectorsAgencies"></a>
+                    <span class="name">
+                        <span ><b>getSelectorsAgencies</b></span>
+                        <a href="#getSelectorsAgencies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSelectorsAgencies(programId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, regionals: number[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="160"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:160</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene las agencias seleccionadas por programa y regionales.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>programId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del programa.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>regionals</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Un arreglo de números que representan los IDs de las regionales.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;SelectorResponseModelFinally&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con las agencias seleccionadas.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSelectorsFinally"></a>
+                    <span class="name">
+                        <span ><b>getSelectorsFinally</b></span>
+                        <a href="#getSelectorsFinally"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSelectorsFinally()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="139"
+                                    class="link-to-prism">src/app/infrastructure/services/report.service.ts:139</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los selectores finales.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;SelectorResponseModelFinally&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un Observable que emite una instancia de ResponseBase con los datos de los selectores finales.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="baseUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>baseUrl</b></span>
+                        <a href="#baseUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;/compliance-api/api/v1&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/infrastructure/services/report.service.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="http"></a>
+                    <span class="name">
+                        <span ><b>http</b></span>
+                        <a href="#http"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(HttpClient)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/infrastructure/services/report.service.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable, inject } from &#x27;@angular/core&#x27;;
+import { ReportRepository } from &#x27;../../core/repositories/report.repository&#x27;;
+import { Observable, map } from &#x27;rxjs&#x27;;
+import { environment } from &#x27;../../../environments/environment&#x27;;
+import { ResponseBase } from &#x27;../../core/models/responseBase.model&#x27;;
+import { SelectorResponseModel, SelectorResponseModel1, SelectorResponseModelFinally } from &#x27;../../core/models/selectorResponse.model&#x27;;
+import { SelectorResponseDTO, SelectorResponseDTO1, SelectorResponseFDTO1 } from &#x27;../dto/selectorResponse.dto&#x27;;
+import { SelectorMapper } from &#x27;../../core/mappers/selector.mapper&#x27;;
+import { RequestIndicatorsAdmin } from &#x27;../../core/models/requestIndicatorsAdmin.model&#x27;;
+import { IndicatorResponseDTO } from &#x27;../dto/indicatorResponse.dto&#x27;;
+import { IndicatorMapper } from &#x27;../../core/mappers/Indicator.mapper&#x27;;
+import { AffiliateRanking } from &#x27;../../core/models/UserRanking.model&#x27;;
+import { affiliateRankingDTO } from &#x27;../dto/rankingResponse.dto&#x27;;
+import { RankingMapper } from &#x27;src/app/core/mappers/ranking.mapper&#x27;;
+import { PeriodsModel } from &#x27;src/app/core/models/Periods.model&#x27;;
+import { periodResponseDTO } from &#x27;../dto/periodResponse.dto&#x27;;
+import { PeriodMapper } from &#x27;src/app/core/mappers/period.mapper&#x27;;
+import { SegmentsModel } from &#x27;src/app/core/models/Segments.model&#x27;;
+import { segmentResponseDTO } from &#x27;../dto/segmentResponse.dto&#x27;;
+import { SegmentMapper } from &#x27;src/app/core/mappers/segment.mapper&#x27;;
+import { RegionalModel } from &#x27;src/app/core/models/Regional.model&#x27;;
+import { regionalResponseDTO } from &#x27;../dto/regionalResponse.dto&#x27;;
+import { RegionalMapper } from &#x27;src/app/core/mappers/regional.mapper&#x27;;
+import { AgenciesModel } from &#x27;src/app/core/models/Agencies.model&#x27;;
+import { agenciesResponseDTO } from &#x27;../dto/agenciesResponse.dto&#x27;;
+import { AgenciesMapper } from &#x27;src/app/core/mappers/agencies.mapper&#x27;;
+import { CompliancesModel } from &#x27;src/app/core/models/Compliances.model&#x27;;
+import { compliancesResponseDTO } from &#x27;../dto/complianceResponse.dto&#x27;;
+import { ComplianceMapper } from &#x27;src/app/core/mappers/compliance.mapper&#x27;;
+import { InfoCountAfiliateFinallyModel } from &#x27;src/app/core/models/InfoCountAfiliateFinally.model&#x27;;
+import { infoCountResponseDTO } from &#x27;../dto/infoCountResponse.dto&#x27;;
+
+import { AccountMapper } from &#x27;src/app/core/mappers/account.mapper&#x27;;
+
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class ReportService implements ReportRepository {
+
+  http &#x3D; inject(HttpClient);
+  private baseUrl &#x3D; &#x27;/compliance-api/api/v1&#x27;;
+
+
+
+  /**
+   * Obtiene un informe administrativo.
+   *
+   * @param document - El documento de identificación.
+   * @param data - Los datos de los indicadores de solicitud administrativa.
+   * @returns Un observable que emite una respuesta base con el modelo de cumplimientos.
+   */
+  getReportAdmin(document: string, data: RequestIndicatorsAdmin): Observable&lt;ResponseBase&lt;CompliancesModel&gt;&gt; {
+    let dataSend &#x3D; {
+      Identification: document,
+      Regional: data.Regionals,
+      Agency: data.Agencies,
+      Role: data.Rols,
+      Segment: data.Segments
+    }
+    return this.http.post&lt;ResponseBase&lt;IndicatorResponseDTO&gt;&gt;(&#x60;${environment.apiUrl}${this.baseUrl}/DataFilteredCompliance/get-data-filtered-compliance&#x60;, dataSend)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: IndicatorMapper.fromApiToDomain(response.data)
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene un informe de afiliado.
+   *
+   * @param document - Documento de identificación del afiliado.
+   * @returns Un observable que emite una respuesta con el código de identificación, el mensaje y los datos del informe de cumplimiento.
+   */
+  getReportAffiliate(document: string): Observable&lt;ResponseBase&lt;CompliancesModel&gt;&gt; {
+    let dataSend &#x3D; {
+      Identification: document.toString(),
+    }
+
+    return this.http.post&lt;ResponseBase&lt;IndicatorResponseDTO&gt;&gt;(&#x60;${environment.apiUrl}${this.baseUrl}/DataFilteredCompliance/get-data-filtered-compliance&#x60;, dataSend)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: IndicatorMapper.fromApiToDomain(response.data)
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene el selector de cumplimiento de filtros.
+   *
+   * @returns Un observable que emite una respuesta con el selector de cumplimiento de filtros.
+   */
+  getSelector(): Observable&lt;ResponseBase&lt;SelectorResponseModel&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;SelectorResponseDTO&gt;&gt;(&#x60;${environment.apiUrl}${this.baseUrl}/FiltersCompliance/get-filters-compliance&#x60;)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: SelectorMapper.fromApiToDomain(response.data)
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene los selectores para un tipo específico.
+   *
+   * @param type - El tipo de selector a obtener.
+   * @returns Un observable que emite una respuesta con los selectores.
+   */
+  getSelectors(type: number): Observable&lt;ResponseBase&lt;SelectorResponseModel1&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;SelectorResponseDTO1&gt;&gt;(&#x60;${environment.apiUrl}${this.baseUrl}/FiltersCompliance/get-filters-compliance?type&#x3D;${type}&#x60;)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: SelectorMapper.fromApiToDomain1(response.data)
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene los selectores finales.
+   *
+   * @returns Un Observable que emite una instancia de ResponseBase con los datos de los selectores finales.
+   */
+  getSelectorsFinally(): Observable&lt;ResponseBase&lt;SelectorResponseModelFinally&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;SelectorResponseFDTO1&gt;&gt;(&#x60;${environment.apiUrl}${this.baseUrl}/FiltersCompliance/get-filters-compliance&#x60;)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: SelectorMapper.fromApiToDomainFinally(response.data)
+          }
+        })
+      );
+  }
+
+
+  /**
+   * Obtiene las agencias seleccionadas por programa y regionales.
+   *
+   * @param programId - El ID del programa.
+   * @param regionals - Un arreglo de números que representan los IDs de las regionales.
+   * @returns Un observable que emite una respuesta con las agencias seleccionadas.
+   */
+  getSelectorsAgencies(programId: number, regionals: number[]): Observable&lt;ResponseBase&lt;SelectorResponseModelFinally&gt;&gt; {
+    let dataSend &#x3D; {
+      ProgramId: programId,
+      AgenciaPadre: regionals
+    }
+
+    return this.http.post&lt;ResponseBase&lt;SelectorResponseFDTO1&gt;&gt;(&#x60;${environment.apiUrl}${this.baseUrl}/FinalReportCompliance/get-agency-by-regional&#x60;, dataSend)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: SelectorMapper.fromApiToDomainFinally(response.data)
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene la información de cumplimiento del afiliado finalmente.
+   *
+   * @param period - El período de tiempo.
+   * @param idCount - El ID de la cuenta.
+   * @returns Un observable que emite una respuesta con el código de identificación, el mensaje y los datos de cumplimiento.
+   */
+  getInfoAffiliateFinally(period: number, idCount: number): Observable&lt;ResponseBase&lt;CompliancesModel&gt;&gt; {
+    const dataSend &#x3D; {
+      Period: period,
+      AccountId: idCount,
+    }
+
+    return this.http.post&lt;ResponseBase&lt;compliancesResponseDTO&gt;&gt;(&#x60;${environment.apiUrl}${this.baseUrl}/FinalReportCompliance/get-data-final-report&#x60;, dataSend)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: ComplianceMapper.fromApiToDomain(response.data)
+          }
+        })
+      );
+  }
+
+  /**
+ * Obtiene la información administrativa final.
+ *
+ * @param periodId - El ID del período.
+ * @param data - Los datos de los indicadores administrativos.
+ * @returns Un observable que emite una respuesta con el modelo de cumplimientos.
+ */
+  getInfoAdminFinally(periodId: number, data: RequestIndicatorsAdmin): Observable&lt;ResponseBase&lt;CompliancesModel&gt;&gt; {
+    const dataSend &#x3D; {
+      Period: periodId,
+      Segment: data.Segments,
+      Regional: data.Regionals,
+      Agency: data.Agencies,
+    }
+    return this.http.post&lt;ResponseBase&lt;compliancesResponseDTO&gt;&gt;(&#x60;${environment.apiUrl}/compliance-api/api/v1/FinalReportCompliance/get-data-final-report&#x60;, dataSend)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: ComplianceMapper.fromApiToDomain(response.data)
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene la información de clasificación de afiliados.
+   *
+   * @param periodId - El ID del período.
+   * @param idCount - El ID del contador.
+   * @returns Un observable que emite una respuesta con la clasificación de afiliados.
+   */
+  getInfoRanking(periodId: number, idCount: number): Observable&lt;ResponseBase&lt;AffiliateRanking&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;affiliateRankingDTO&gt;&gt;(&#x60;${environment.apiUrl}/compliance-api/api/v1/FinalReportCompliance/get-ranking?periodId&#x3D;${periodId}&amp;accountId&#x3D;${idCount}&#x60;)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: RankingMapper.fromApiToDomain(response.data)
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene los períodos.
+   *
+   * @returns Un Observable que emite una respuesta que contiene un arreglo de objetos PeriodsModel.
+   */
+  getPeriods(): Observable&lt;ResponseBase&lt;PeriodsModel[]&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;periodResponseDTO[]&gt;&gt;(&#x60;${environment.apiUrl}/read-parameter-api/api/v1/period/get-periods&#x60;)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: PeriodMapper.fromApiToDomain(response.data ? response.data : [])
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene los segmentos.
+   *
+   * @returns Un observable que emite una respuesta con un arreglo de modelos de segmentos.
+   */
+  getSegments(): Observable&lt;ResponseBase&lt;SegmentsModel[]&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;segmentResponseDTO[]&gt;&gt;(&#x60;${environment.apiUrl}/read-parameter-api/api/v1/clusters&#x60;)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: SegmentMapper.fromApiToDomain(response.data ? response.data : [])
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene la información regional.
+   *
+   * @returns Un observable que emite una respuesta con un arreglo de modelos regionales.
+   */
+  getRegional(): Observable&lt;ResponseBase&lt;RegionalModel[]&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;regionalResponseDTO[]&gt;&gt;(&#x60;${environment.apiUrl}/read-parameter-api/api/v1/regional/get-regional&#x60;)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: RegionalMapper.fromApiToDomain(response.data ? response.data : [])
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene las agencias según los identificadores de las regionales.
+   * @param regionalsIds - Los identificadores de las regionales (opcional).
+   * @returns Un observable que emite una respuesta con un arreglo de modelos de agencias.
+   */
+  getAgencies(regionalsIds: number[] &#x3D; []): Observable&lt;ResponseBase&lt;AgenciesModel[]&gt;&gt; {
+    return this.http.post&lt;ResponseBase&lt;agenciesResponseDTO[]&gt;&gt;(&#x60;${environment.apiUrl}/read-parameter-api/api/v1/agencies/get-by-regionals&#x60;, { regionalsIds })
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: AgenciesMapper.fromApiToDomain(response.data ? response.data : [])
+          }
+        })
+      );
+  }
+
+  /**
+   * Obtiene la información del recuento de afiliados finalmente para un ID de recuento dado.
+   *
+   * @param countId - El ID del recuento.
+   * @returns Un observable que emite una instancia de ResponseBase con la información del recuento de afiliados finalmente.
+   */
+  getInfoCountAffiliateFinally(countId: number): Observable&lt;ResponseBase&lt;InfoCountAfiliateFinallyModel&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;infoCountResponseDTO&gt;&gt;(&#x60;${environment.apiUrl}/compliance-api/api/v1/FinalReportCompliance/get-data-account?AccountId&#x3D;${countId}&#x60;)
+      .pipe(
+        map(response &#x3D;&gt; {
+          return {
+            codeId: response.codeId,
+            message: response.message,
+            data: AccountMapper.fromApiToDomain(response.data)
+          }
+        })
+      );
+  }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ReportService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

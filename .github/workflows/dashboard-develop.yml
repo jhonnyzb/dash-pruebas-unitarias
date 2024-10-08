@@ -1,0 +1,56 @@
+name: Develop Dashboard CI/CD
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+
+    - name: Install Dependencies and Build Angular App
+      run: |
+        npm install --legacy-peer-deps
+        npm run develop
+
+    - name: Compress files with gzip
+      run: |
+        find ./dist/develop -type f \( -name "*.js" -o -name "*.css" \) -exec gzip -9 {} \; -exec mv {}.gz {} \;
+
+    - name: Deploy to S3
+      if: success()
+      run: |
+        aws s3 sync ./dist/develop s3://dev-valepro-admin-dashboard --exclude "*.js" --exclude "*.css"
+        aws s3 cp ./dist/develop/index.html s3://dev-valepro-admin-dashboard
+
+    - name: Copy gzip files to S3
+      run: |
+        aws s3 cp --recursive --content-encoding gzip ./dist/develop s3://dev-valepro-admin-dashboard --exclude "*" --include "*.js" --include "*.css"
+
+    - name: Invalidar CloudFront
+      if: success()
+      run: |
+        aws cloudfront create-invalidation --distribution-id E3RYYPVXXU6BBO --paths "/*"
+
+    - name: Sonarqube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}

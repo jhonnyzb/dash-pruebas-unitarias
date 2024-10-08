@@ -1,0 +1,62 @@
+<div class="indicator">
+  <div class="indicator__name">
+    <span class="bold-24 primary mb-3">{{indicator.Indicator}}</span>
+  </div>
+  <div
+    [ngClass]="{'indicator__mainadmin': user.typeUser === 'admin', 'indicator__main': user.typeUser === 'affiliate'}">
+    <div class="indicator__graphics">
+      <div class="indicator__circle">
+        <div class='indicator__percentages' [style.--percentages]="percentages" [style.--color]="color">
+          <svg width="150" height="150">
+            <circle r="62" cx="50%" cy="50%" pathLength="100" />
+            <circle r="62" cx="50%" cy="50%" pathLength="100" />
+          </svg>
+          <div *ngIf="user.typeUser === 'affiliate'" class="indicator__containerpoints">
+            <span class="bold-12 indicator__points" [style.backgroundColor]="color">Puntos:
+              {{indicator.Points}}</span>
+          </div>
+          <div *ngIf="user.typeUser === 'affiliate'" class="indicator__line"></div>
+          <div *ngIf="user.typeUser === 'affiliate'" class="indicator__line2f"></div>
+          <div *ngIf="user.typeUser === 'affiliate'" class="indicator__point1"></div>
+          <div *ngIf="user.typeUser === 'affiliate'" class="indicator__point2"></div>
+          <div *ngIf="user.typeUser === 'admin'" class="indicator__line2"></div>
+          <div *ngIf="user.typeUser === 'admin'" class="indicator__point1admin"></div>
+        </div>
+      </div>
+    </div>
+    <!-- admin -->
+    <div *ngIf="user.typeUser === 'admin'"
+      [ngClass]="{'indicator__main-textadmin': user.typeUser === 'admin', 'indicator__main-text': user.typeUser === 'affiliate'}"
+      class="indicator__main-text">
+      <div
+        [ngClass]="{'indicator__textcumplience--borderadmin': user.typeUser === 'admin', 'indicator__textcumplience--border': user.typeUser === 'affiliate'}"
+        class="indicator__textcumplience indicator__space">
+        <span class="bold-12">Cumplimiento:</span>
+        <div>
+          <span [style.color]="color" class="regular-12">{{indicator.Compliance | pipeMoney}}</span>
+          <span [style.color]="color" class="bold-12">&nbsp;({{percentages | number:'1.1-1'}}%)</span>
+        </div>
+      </div>
+      <div class="indicator__textcumplience  indicator__textcumplience--width1 indicator__textcumplience--meta"
+        [style.backgroundColor]="percentages === 0 ? '#DBDBDB': '#58C0EB'">
+        <span class="bold-12">Meta:</span>
+        <span class="regular-12">{{indicator.Finishline | pipeMoney}} {{percentages === 0 ? '(0%)' : '(100%)'}}</span>
+      </div>
+    </div>
+    <!-- afiliado -->
+    <div *ngIf="user.typeUser === 'affiliate'" class="indicator__main-text">
+      <div class="indicator__textcumplience indicator__space indicator__textcumplience--border">
+        <span class="bold-12">Cumplimiento:</span>
+        <div>
+          <span [style.color]="color" class="regular-12">{{indicator.Compliance | pipeMoney}}</span>
+          <span [style.color]="color" class="bold-12">&nbsp;({{percentages | number:'1.1-1'}}%)</span>
+        </div>
+      </div>
+      <div class="indicator__textcumplience  indicator__textcumplience--width2 indicator__textcumplience--meta"
+        [style.backgroundColor]="percentages === 0 ? '#DBDBDB': '#58C0EB'">
+        <span class="bold-12">Meta:</span>
+        <span class="regular-12">{{indicator.Finishline | pipeMoney}} {{percentages === 0 ? '(0%)' : '(100%)'}}</span>
+      </div>
+    </div>
+  </div>
+</div>

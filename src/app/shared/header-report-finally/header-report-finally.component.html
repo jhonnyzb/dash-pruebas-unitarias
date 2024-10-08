@@ -1,0 +1,40 @@
+<div class="reportheaderfinally">
+    <div class="reportheader__infofinally reportheader__infofinally--width1">
+        <div class="reportheaderfinally__imgb">
+            <img class="reportheaderfinally__img" [src]="user.img" alt="Imagen programa">
+        </div>
+        <div class="reportheaderfinally__text">
+            <span class="bold-32 primary reportheaderfinally__text--user">{{user.name}}</span>
+            <span *ngIf="user.typeUser === 'admin'" class="regular-24 primary ">Administrador</span>
+            <div *ngIf="user.typeUser === 'affiliate'" class="reportheaderfinally__affiliate">
+                <div class="reportheaderfinally__infoaffiliate">
+                    <div>
+                        <span class="bold-16 primary">Fuerza de ventas:&nbsp;</span><span class="regular-16 primary">{{ force }}</span>
+                    </div>
+                    <div>
+                        <span class="bold-16 primary">Regional:&nbsp;</span><span class="regular-16 primary">{{ regional}}</span>
+                    </div>
+                </div>
+                <div class="reportheaderfinally__infoaffiliate">
+                    <div>
+                        <span class="bold-16 primary">Cedi:&nbsp;</span><span class="regular-16 primary">{{ cedi}}</span>
+                    </div>
+                    <div>
+                        <span class="bold-16 primary">Cargo:&nbsp;</span><span class="regular-16 primary">{{ occupation }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reportheader__infofinally reportheader__infofinally--width2">
+        <mat-form-field class="reportheader__periodfinally">
+            <mat-label>Periodo</mat-label>
+            <mat-select class="regular-16" [formControl]="period" (selectionChange)="onSelectionChangePeriod()">
+                <mat-option *ngFor="let period of periods" [value]="period.PeriodId">{{period.Name}}</mat-option>
+            </mat-select>
+            <span *ngIf="errorPeriod !==''" class="regular-16 reportheader__perioderror">{{errorPeriod}}</span>
+        </mat-form-field>
+       
+    </div>
+</div>
+<hr class="reportheaderfinally__spaceline">

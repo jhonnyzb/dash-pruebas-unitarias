@@ -1,0 +1,34 @@
+<div class="reportheaderfollowup">
+    <div class="reportheader__infofollowup reportheader__infofollowup--width1">
+        <div class="reportheaderfollowup__img">
+            <img [src]="user.img" alt="Imagen programa">
+        </div>
+        <div class="reportheaderfollowup__text">
+            <span class="bold-32 primary reportheaderfollowup__text--user">{{user.name}}</span>
+            <span *ngIf="user.typeUser === 'admin'" class="regular-24 primary ">Administrador</span>
+            <div *ngIf="user.typeUser === 'affiliate'" class="reportheaderfollowup__affiliate">
+                <div class="reportheaderfollowup__infoaffiliate">
+                    <div>
+                        <span class="bold-16 primary">Fuerza de ventas:&nbsp;</span><span class="regular-16 primary">{{ force }}</span>
+                    </div>
+                    <div>
+                        <span class="bold-16 primary">Regional:&nbsp;</span><span class="regular-16 primary">{{ regional }}</span>
+                    </div>
+                </div>
+                <div class="reportheaderfollowup__infoaffiliate">
+                    <div>
+                        <span class="bold-16 primary">Cedi:&nbsp;</span><span class="regular-16 primary">{{ cedi }}</span>
+                    </div>
+                    <div>
+                        <span class="bold-16 primary">Cargo:&nbsp;</span><span class="regular-16 primary">{{ cargo }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reportheader__infofollowup reportheader__infofollowup--width2">
+        <span class="mb-3 bold-16 primary reportheader__followupdatereport ">{{dateReport === '' ? '' : 'Informe con corte al'}} {{dateReport}}</span>
+    </div>
+</div>
+<hr class="reportheader__spaceline">
+

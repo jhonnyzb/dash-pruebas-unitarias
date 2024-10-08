@@ -1,0 +1,976 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>valepro-dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">valepro-dashboards documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  IndicatorIndividualComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/indicator-individual/indicator-individual.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-indicator-individual</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./indicator-individual.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./indicator-individual.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#color" >color</a>
+                            </li>
+                            <li>
+                                <a href="#percentages" >percentages</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#indicator" >indicator</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/indicator-individual/indicator-individual.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="indicator"></a>
+                        <b>indicator</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CompliancesInfoModel.html" target="_self" >CompliancesInfoModel</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/indicator-individual/indicator-individual.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <b>user</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/indicator-individual/indicator-individual.component.ts:13</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <span ><b>ngOnChanges</b></span>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges(changes: SimpleChanges)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="27"
+                                    class="link-to-prism">src/app/shared/indicator-individual/indicator-individual.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que se ejecuta cuando hay cambios en las propiedades de entrada del componente.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>changes</td>
+                                            <td>
+                                                        <code>SimpleChanges</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Objeto que contiene los cambios detectados en las propiedades de entrada.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="20"
+                                    class="link-to-prism">src/app/shared/indicator-individual/indicator-individual.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="color"></a>
+                    <span class="name">
+                        <span ><b>color</b></span>
+                        <a href="#color"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;#DBDBDB&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/indicator-individual/indicator-individual.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="percentages"></a>
+                    <span class="name">
+                        <span ><b>percentages</b></span>
+                        <a href="#percentages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/indicator-individual/indicator-individual.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit, SimpleChanges } from &#x27;@angular/core&#x27;;
+import { CompliancesInfoModel } from &#x27;src/app/core/models/Compliances.model&#x27;;
+
+
+@Component({
+  selector: &#x27;app-indicator-individual&#x27;,
+  templateUrl: &#x27;./indicator-individual.component.html&#x27;,
+  styleUrls: [&#x27;./indicator-individual.component.scss&#x27;]
+})
+export class IndicatorIndividualComponent implements OnInit {
+
+  @Input() indicator!: CompliancesInfoModel;
+  @Input() user!: any;
+
+  percentages: number &#x3D; 0;
+  color: string &#x3D; &#x27;#DBDBDB&#x27;;
+
+  constructor() { }
+
+  ngOnInit(): void { }
+
+  /**
+   * Método que se ejecuta cuando hay cambios en las propiedades de entrada del componente.
+   * @param changes - Objeto que contiene los cambios detectados en las propiedades de entrada.
+   * @returns void
+   */
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes[&#x27;indicator&#x27;]) {
+      const { Finishline, Compliance } &#x3D; this.indicator
+      this.percentages &#x3D; Finishline &#x3D;&#x3D;&#x3D; 0 ? 0 : Compliance! * 100 / Finishline!;
+      this.percentages &gt;&#x3D; 100 ? this.color &#x3D; &#x27;green&#x27; : this.percentages &#x3D;&#x3D;&#x3D; 0 ? this.color &#x3D; &#x27;#C3C3C3&#x27; : this.color &#x3D; &#x27;red&#x27;;
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;indicator&quot;&gt;
+  &lt;div class&#x3D;&quot;indicator__name&quot;&gt;
+    &lt;span class&#x3D;&quot;bold-24 primary mb-3&quot;&gt;{{indicator.Indicator}}&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div
+    [ngClass]&#x3D;&quot;{&#x27;indicator__mainadmin&#x27;: user.typeUser &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;, &#x27;indicator__main&#x27;: user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;}&quot;&gt;
+    &lt;div class&#x3D;&quot;indicator__graphics&quot;&gt;
+      &lt;div class&#x3D;&quot;indicator__circle&quot;&gt;
+        &lt;div class&#x3D;&#x27;indicator__percentages&#x27; [style.--percentages]&#x3D;&quot;percentages&quot; [style.--color]&#x3D;&quot;color&quot;&gt;
+          &lt;svg width&#x3D;&quot;150&quot; height&#x3D;&quot;150&quot;&gt;
+            &lt;circle r&#x3D;&quot;62&quot; cx&#x3D;&quot;50%&quot; cy&#x3D;&quot;50%&quot; pathLength&#x3D;&quot;100&quot; /&gt;
+            &lt;circle r&#x3D;&quot;62&quot; cx&#x3D;&quot;50%&quot; cy&#x3D;&quot;50%&quot; pathLength&#x3D;&quot;100&quot; /&gt;
+          &lt;/svg&gt;
+          &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;&quot; class&#x3D;&quot;indicator__containerpoints&quot;&gt;
+            &lt;span class&#x3D;&quot;bold-12 indicator__points&quot; [style.backgroundColor]&#x3D;&quot;color&quot;&gt;Puntos:
+              {{indicator.Points}}&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;&quot; class&#x3D;&quot;indicator__line&quot;&gt;&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;&quot; class&#x3D;&quot;indicator__line2f&quot;&gt;&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;&quot; class&#x3D;&quot;indicator__point1&quot;&gt;&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;&quot; class&#x3D;&quot;indicator__point2&quot;&gt;&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;&quot; class&#x3D;&quot;indicator__line2&quot;&gt;&lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;&quot; class&#x3D;&quot;indicator__point1admin&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- admin --&gt;
+    &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;&quot;
+      [ngClass]&#x3D;&quot;{&#x27;indicator__main-textadmin&#x27;: user.typeUser &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;, &#x27;indicator__main-text&#x27;: user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;}&quot;
+      class&#x3D;&quot;indicator__main-text&quot;&gt;
+      &lt;div
+        [ngClass]&#x3D;&quot;{&#x27;indicator__textcumplience--borderadmin&#x27;: user.typeUser &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;, &#x27;indicator__textcumplience--border&#x27;: user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;}&quot;
+        class&#x3D;&quot;indicator__textcumplience indicator__space&quot;&gt;
+        &lt;span class&#x3D;&quot;bold-12&quot;&gt;Cumplimiento:&lt;/span&gt;
+        &lt;div&gt;
+          &lt;span [style.color]&#x3D;&quot;color&quot; class&#x3D;&quot;regular-12&quot;&gt;{{indicator.Compliance | pipeMoney}}&lt;/span&gt;
+          &lt;span [style.color]&#x3D;&quot;color&quot; class&#x3D;&quot;bold-12&quot;&gt;&amp;nbsp;({{percentages | number:&#x27;1.1-1&#x27;}}%)&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;indicator__textcumplience  indicator__textcumplience--width1 indicator__textcumplience--meta&quot;
+        [style.backgroundColor]&#x3D;&quot;percentages &#x3D;&#x3D;&#x3D; 0 ? &#x27;#DBDBDB&#x27;: &#x27;#58C0EB&#x27;&quot;&gt;
+        &lt;span class&#x3D;&quot;bold-12&quot;&gt;Meta:&lt;/span&gt;
+        &lt;span class&#x3D;&quot;regular-12&quot;&gt;{{indicator.Finishline | pipeMoney}} {{percentages &#x3D;&#x3D;&#x3D; 0 ? &#x27;(0%)&#x27; : &#x27;(100%)&#x27;}}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- afiliado --&gt;
+    &lt;div *ngIf&#x3D;&quot;user.typeUser &#x3D;&#x3D;&#x3D; &#x27;affiliate&#x27;&quot; class&#x3D;&quot;indicator__main-text&quot;&gt;
+      &lt;div class&#x3D;&quot;indicator__textcumplience indicator__space indicator__textcumplience--border&quot;&gt;
+        &lt;span class&#x3D;&quot;bold-12&quot;&gt;Cumplimiento:&lt;/span&gt;
+        &lt;div&gt;
+          &lt;span [style.color]&#x3D;&quot;color&quot; class&#x3D;&quot;regular-12&quot;&gt;{{indicator.Compliance | pipeMoney}}&lt;/span&gt;
+          &lt;span [style.color]&#x3D;&quot;color&quot; class&#x3D;&quot;bold-12&quot;&gt;&amp;nbsp;({{percentages | number:&#x27;1.1-1&#x27;}}%)&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;indicator__textcumplience  indicator__textcumplience--width2 indicator__textcumplience--meta&quot;
+        [style.backgroundColor]&#x3D;&quot;percentages &#x3D;&#x3D;&#x3D; 0 ? &#x27;#DBDBDB&#x27;: &#x27;#58C0EB&#x27;&quot;&gt;
+        &lt;span class&#x3D;&quot;bold-12&quot;&gt;Meta:&lt;/span&gt;
+        &lt;span class&#x3D;&quot;regular-12&quot;&gt;{{indicator.Finishline | pipeMoney}} {{percentages &#x3D;&#x3D;&#x3D; 0 ? &#x27;(0%)&#x27; : &#x27;(100%)&#x27;}}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./indicator-individual.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@keyframes fill {
+    to {
+        stroke-dasharray: var(--percentages) 100;
+    }
+}
+
+.indicator {
+    display: flex;
+    min-height: 324px;
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+    min-width: 300px;
+    align-items: center;
+    border: 1px #DBDBDB solid;
+
+    &amp;__name {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &amp;__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 300px;
+    }
+
+    &amp;__mainadmin {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 300px;
+        flex-direction: column;
+    }
+
+    &amp;__graphics {
+        width: 158px;
+    }
+
+    &amp;__percentages {
+        position: relative;
+    }
+
+    &amp;__containerpoints {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        bottom: 0%;
+        right: 0%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &amp;__circle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &amp;__line2f {
+        position: absolute;
+        width: 18px;
+        height: 1px;
+        background-color: #DBDBDB;
+        top: 146px;
+        left: 75px;
+        transform: rotate(58deg);
+    }
+
+    &amp;__line2 {
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background-color: #DBDBDB;
+        top: 147px;
+        left: 75px;
+        transform: rotate(236deg);
+    }
+
+
+
+    &amp;__point2 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background-color: #DBDBDB;
+        top: 132px;
+        left: 74px;
+        border-radius: 50%;
+    }
+
+    &amp;__point1admin {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background-color: #DBDBDB;
+        top: 132px;
+        left: 74px;
+        border-radius: 50%;
+    }
+
+    &amp;__main-text {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    &amp;__main-textadmin {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &amp;__textcumplience {
+        display: flex;
+        flex-direction: column;
+
+        &amp;--meta {
+            padding: 10px 3px 10px 6px;
+            border-radius: 2px;
+            margin-top: 20px;
+        }
+
+        &amp;--border {
+            border-top: #DBDBDB 1px solid;
+        }
+
+        &amp;--borderadmin {
+            border-top: #DBDBDB 1px solid;
+        }
+
+        &amp;--width1 {
+            width: 155px;
+        }
+
+        &amp;--width2 {
+            width: 135px;
+        }
+    }
+
+    &amp;__points {
+        padding: 5px;
+        color: white;
+        border-radius: 8px;
+        max-width: 80px;
+        text-align: center;
+    }
+
+    &amp;__space {
+        width: 135px;
+        margin-left: 18px;
+    }
+
+
+
+}
+
+circle {
+    fill: none;
+    stroke-width: 26;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+    stroke-dasharray: 100 100;
+    stroke: #f4f4f4;
+}
+
+circle:nth-child(2) {
+    stroke: var(--color);
+    stroke-dasharray: 0 100;
+    animation: fill .35s linear forwards;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .indicator {
+
+        &amp;__main {
+            flex-direction: row;
+            justify-content: unset;
+        }
+
+        &amp;__main-text {
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &amp;__textcumplience {
+            &amp;--border {
+                border-bottom: #DBDBDB 1px solid;
+                border-top: unset;
+            }
+
+            &amp;--meta {
+                margin-left: 10px;
+            }
+        }
+
+        &amp;__line {
+            position: absolute;
+            width: 24px;
+            height: 1px;
+            background-color: #DBDBDB;
+            top: 61px;
+            left: 132px;
+            transform: rotate(-55deg);
+        }
+
+        &amp;__point1 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: #DBDBDB;
+            top: 71px;
+            left: 132px;
+            border-radius: 50%;
+        }
+
+        &amp;__line2f {
+            display: none;
+        }
+
+        &amp;__point2 {
+            display: none;
+        }
+
+        &amp;__space {
+            margin-left: unset;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="indicator">  <div class="indicator__name">    <span class="bold-24 primary mb-3">{{indicator.Indicator}}</span>  </div>  <div    [ngClass]="{\'indicator__mainadmin\': user.typeUser === \'admin\', \'indicator__main\': user.typeUser === \'affiliate\'}">    <div class="indicator__graphics">      <div class="indicator__circle">        <div class=\'indicator__percentages\' [style.--percentages]="percentages" [style.--color]="color">          <svg width="150" height="150">            <circle r="62" cx="50%" cy="50%" pathLength="100" />            <circle r="62" cx="50%" cy="50%" pathLength="100" />          </svg>          <div *ngIf="user.typeUser === \'affiliate\'" class="indicator__containerpoints">            <span class="bold-12 indicator__points" [style.backgroundColor]="color">Puntos:              {{indicator.Points}}</span>          </div>          <div *ngIf="user.typeUser === \'affiliate\'" class="indicator__line"></div>          <div *ngIf="user.typeUser === \'affiliate\'" class="indicator__line2f"></div>          <div *ngIf="user.typeUser === \'affiliate\'" class="indicator__point1"></div>          <div *ngIf="user.typeUser === \'affiliate\'" class="indicator__point2"></div>          <div *ngIf="user.typeUser === \'admin\'" class="indicator__line2"></div>          <div *ngIf="user.typeUser === \'admin\'" class="indicator__point1admin"></div>        </div>      </div>    </div>    <!-- admin -->    <div *ngIf="user.typeUser === \'admin\'"      [ngClass]="{\'indicator__main-textadmin\': user.typeUser === \'admin\', \'indicator__main-text\': user.typeUser === \'affiliate\'}"      class="indicator__main-text">      <div        [ngClass]="{\'indicator__textcumplience--borderadmin\': user.typeUser === \'admin\', \'indicator__textcumplience--border\': user.typeUser === \'affiliate\'}"        class="indicator__textcumplience indicator__space">        <span class="bold-12">Cumplimiento:</span>        <div>          <span [style.color]="color" class="regular-12">{{indicator.Compliance | pipeMoney}}</span>          <span [style.color]="color" class="bold-12">&nbsp;({{percentages | number:\'1.1-1\'}}%)</span>        </div>      </div>      <div class="indicator__textcumplience  indicator__textcumplience--width1 indicator__textcumplience--meta"        [style.backgroundColor]="percentages === 0 ? \'#DBDBDB\': \'#58C0EB\'">        <span class="bold-12">Meta:</span>        <span class="regular-12">{{indicator.Finishline | pipeMoney}} {{percentages === 0 ? \'(0%)\' : \'(100%)\'}}</span>      </div>    </div>    <!-- afiliado -->    <div *ngIf="user.typeUser === \'affiliate\'" class="indicator__main-text">      <div class="indicator__textcumplience indicator__space indicator__textcumplience--border">        <span class="bold-12">Cumplimiento:</span>        <div>          <span [style.color]="color" class="regular-12">{{indicator.Compliance | pipeMoney}}</span>          <span [style.color]="color" class="bold-12">&nbsp;({{percentages | number:\'1.1-1\'}}%)</span>        </div>      </div>      <div class="indicator__textcumplience  indicator__textcumplience--width2 indicator__textcumplience--meta"        [style.backgroundColor]="percentages === 0 ? \'#DBDBDB\': \'#58C0EB\'">        <span class="bold-12">Meta:</span>        <span class="regular-12">{{indicator.Finishline | pipeMoney}} {{percentages === 0 ? \'(0%)\' : \'(100%)\'}}</span>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DasboardModulesComponent', 'selector': 'app-dasboard-modules'},{'name': 'FinallyReportComponent', 'selector': 'app-finally-report'},{'name': 'HeaderReportComponent', 'selector': 'app-header-report'},{'name': 'HeaderReportFinallyComponent', 'selector': 'app-header-report-finally'},{'name': 'IndicatorIndividualComponent', 'selector': 'app-indicator-individual'},{'name': 'IndicatorReportComponent', 'selector': 'app-indicator-report'},{'name': 'MatConfirmBtnDialogComponent', 'selector': 'app-mat-confirm-btn-dialog'},{'name': 'MatErrorsDialogComponent', 'selector': 'app-mat-errors-dialog'},{'name': 'MonitoringReportComponent', 'selector': 'app-monitoring-report'},{'name': 'OrderReportComponent', 'selector': 'app-order-report'},{'name': 'PaginateComponent', 'selector': 'app-paginate'},{'name': 'RankingComponent', 'selector': 'app-ranking'},{'name': 'SelectorReportComponent', 'selector': 'app-selector-report'},{'name': 'SelectorReportFinallyComponent', 'selector': 'app-selector-report-finally'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'IndicatorIndividualComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'IndicatorIndividualComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<app-header-report 
+    [user]="user" 
+    [dateReport]="dateReport"
+    [information]="information">
+</app-header-report>
+
+<app-selector-report 
+    [user]="user" 
+    [selectors]="selectors" 
+    (messageEvent)="getReportAdmin($event)">
+</app-selector-report>
+
+<app-indicator-report 
+    [user]="user" 
+    [indicators]="indicators">
+</app-indicator-report>
+
+<app-ranking 
+    [user]="user" 
+    [ranking]="ranking" 
+    [pointsTotal]="pointsTotal">
+</app-ranking>

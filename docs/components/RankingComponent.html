@@ -1,0 +1,862 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>valepro-dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">valepro-dashboards documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  RankingComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/ranking/ranking.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-ranking</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./ranking.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./ranking.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#rankingAgencia" >rankingAgencia</a>
+                            </li>
+                            <li>
+                                <a href="#rankingPais" >rankingPais</a>
+                            </li>
+                            <li>
+                                <a href="#rankingRegion" >rankingRegion</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#pointsTotal" >pointsTotal</a>
+                            </li>
+                            <li>
+                                <a href="#ranking" >ranking</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/ranking/ranking.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pointsTotal"></a>
+                        <b>pointsTotal</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/ranking/ranking.component.ts:10</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ranking"></a>
+                        <b>ranking</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/ranking/ranking.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <b>user</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/ranking/ranking.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <span ><b>ngOnChanges</b></span>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges(changes: SimpleChanges)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/shared/ranking/ranking.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>changes</td>
+                                            <td>
+                                                        <code>SimpleChanges</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="20"
+                                    class="link-to-prism">src/app/shared/ranking/ranking.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rankingAgencia"></a>
+                    <span class="name">
+                        <span ><b>rankingAgencia</b></span>
+                        <a href="#rankingAgencia"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/ranking/ranking.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rankingPais"></a>
+                    <span class="name">
+                        <span ><b>rankingPais</b></span>
+                        <a href="#rankingPais"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/ranking/ranking.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rankingRegion"></a>
+                    <span class="name">
+                        <span ><b>rankingRegion</b></span>
+                        <a href="#rankingRegion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/ranking/ranking.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit, SimpleChanges } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-ranking&#x27;,
+  templateUrl: &#x27;./ranking.component.html&#x27;,
+  styleUrls: [&#x27;./ranking.component.scss&#x27;]
+})
+export class RankingComponent implements OnInit {
+
+  @Input() pointsTotal!: number;
+  @Input() ranking!: {} ;
+  @Input() user!: any;
+
+  rankingPais: number &#x3D; 0;
+  rankingAgencia: number &#x3D; 0;
+  rankingRegion: number &#x3D; 0;
+
+  constructor() { }
+
+  ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes[&#x27;pointsTotal&#x27;]) {
+      this.pointsTotal &#x3D; changes[&#x27;pointsTotal&#x27;].currentValue;
+    }
+    if (changes[&#x27;ranking&#x27;]) {
+      this.rankingPais &#x3D; changes[&#x27;ranking&#x27;].currentValue.rankingPais
+      this.rankingAgencia &#x3D; changes[&#x27;ranking&#x27;].currentValue.rankingAgencia
+      this.rankingRegion &#x3D; changes[&#x27;ranking&#x27;].currentValue.rankingRegion
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;user.typeUser&#x3D;&#x3D;&#x3D;&#x27;affiliate&#x27;&quot; class&#x3D;&quot;ranking&quot;&gt;
+    &lt;div class&#x3D;&quot;ranking__info&quot;&gt;
+        &lt;div class&#x3D;&quot;ranking__data ranking__data--ranking&quot;&gt;
+            &lt;span class&#x3D;&quot;bold-24 primary&quot;&gt;Ranking&lt;/span&gt;
+            &lt;span class&#x3D;&quot;regular-16 primary ranking__aligntext&quot;&gt;puntos totales ganados&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;ranking__data--containerfeatures&quot;&gt;
+            &lt;div class&#x3D;&quot;ranking__data ranking__data--feature&quot;&gt;
+                &lt;span class&#x3D;&quot;bold-16 primary&quot;&gt;País&lt;/span&gt;
+                &lt;span class&#x3D;&quot;bold-32 primary&quot;&gt;{{rankingPais}}&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;ranking__data ranking__data--feature&quot;&gt;
+                &lt;span class&#x3D;&quot;bold-16 primary&quot;&gt;Regional&lt;/span&gt;
+                &lt;span class&#x3D;&quot;bold-32 primary&quot;&gt;{{rankingRegion}}&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;ranking__data ranking__data--feature&quot;&gt;
+                &lt;span class&#x3D;&quot;bold-16 primary&quot;&gt;Agencia&lt;/span&gt;
+                &lt;span class&#x3D;&quot;bold-32 primary&quot;&gt;{{rankingAgencia}}&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;ranking__points&quot;&gt;
+        &lt;div class&#x3D;&quot;ranking__pointscontain&quot;&gt;
+            &lt;span class&#x3D;&quot;bold-24 primary&quot;&gt;Puntos&lt;/span&gt;
+            &lt;span class&#x3D;&quot;bold-24 primary&quot;&gt;Totales:&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;span class&#x3D;&quot;bold-24 primary ranking__pointsTotal&quot;&gt;{{pointsTotal}}&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./ranking.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.ranking {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 88px;
+    margin-top: 30px;
+    flex-direction: column-reverse;
+    margin-bottom: 40px;
+
+    &amp;__info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    &amp;__data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--ngx-valepro-color-primary);
+        height: 100%;
+        border-right: #dbdbdb6c solid 1px;
+        color: white;
+        
+        &amp;--containerfeatures {
+            display: flex;
+            width: 100%;
+            height: 88px;
+        }
+
+        &amp;--feature {
+            width: 33.9%;
+        }
+
+        &amp;--ranking {
+            width: 100%;
+            height: 87px;
+            border-bottom: #dbdbdb6c solid 1px;
+        }
+
+    }
+
+    &amp;__points {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        background-color: var(--ngx-valepro-color-primary);
+        color: white;
+        height: 88px;
+    }
+
+    &amp;__pointsTotal {
+        font-size: 60px !important;
+    }
+
+    &amp;__aligntext {
+        text-align: center;
+    }
+
+    &amp;__pointscontain {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .ranking {
+        &amp;__info {
+            flex-direction: row;
+        }
+
+        &amp;__data {
+            &amp;--ranking{
+                width: 28%;
+            }
+
+            &amp;--containerfeatures{
+                width: 72%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .ranking {
+        flex-direction: row;
+
+        &amp;__data {
+            &amp;--containerfeatures {
+                width: 70%;
+            }
+
+            &amp;--ranking {
+                width: 30%;
+            }
+        }
+
+        &amp;__points {
+            width: 31%;
+        }
+
+        &amp;__info {
+            width: 67%;
+            height: 88px;
+            margin-top: 0px;
+            flex-direction: row;
+        }
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="user.typeUser===\'affiliate\'" class="ranking">    <div class="ranking__info">        <div class="ranking__data ranking__data--ranking">            <span class="bold-24 primary">Ranking</span>            <span class="regular-16 primary ranking__aligntext">puntos totales ganados</span>        </div>        <div class="ranking__data--containerfeatures">            <div class="ranking__data ranking__data--feature">                <span class="bold-16 primary">País</span>                <span class="bold-32 primary">{{rankingPais}}</span>            </div>            <div class="ranking__data ranking__data--feature">                <span class="bold-16 primary">Regional</span>                <span class="bold-32 primary">{{rankingRegion}}</span>            </div>            <div class="ranking__data ranking__data--feature">                <span class="bold-16 primary">Agencia</span>                <span class="bold-32 primary">{{rankingAgencia}}</span>            </div>        </div>    </div>    <div class="ranking__points">        <div class="ranking__pointscontain">            <span class="bold-24 primary">Puntos</span>            <span class="bold-24 primary">Totales:</span>        </div>        <span class="bold-24 primary ranking__pointsTotal">{{pointsTotal}}</span>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DasboardModulesComponent', 'selector': 'app-dasboard-modules'},{'name': 'FinallyReportComponent', 'selector': 'app-finally-report'},{'name': 'HeaderReportComponent', 'selector': 'app-header-report'},{'name': 'HeaderReportFinallyComponent', 'selector': 'app-header-report-finally'},{'name': 'IndicatorIndividualComponent', 'selector': 'app-indicator-individual'},{'name': 'IndicatorReportComponent', 'selector': 'app-indicator-report'},{'name': 'MatConfirmBtnDialogComponent', 'selector': 'app-mat-confirm-btn-dialog'},{'name': 'MatErrorsDialogComponent', 'selector': 'app-mat-errors-dialog'},{'name': 'MonitoringReportComponent', 'selector': 'app-monitoring-report'},{'name': 'OrderReportComponent', 'selector': 'app-order-report'},{'name': 'PaginateComponent', 'selector': 'app-paginate'},{'name': 'RankingComponent', 'selector': 'app-ranking'},{'name': 'SelectorReportComponent', 'selector': 'app-selector-report'},{'name': 'SelectorReportFinallyComponent', 'selector': 'app-selector-report-finally'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RankingComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RankingComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

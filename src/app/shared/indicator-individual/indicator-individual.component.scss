@@ -1,0 +1,240 @@
+@keyframes fill {
+    to {
+        stroke-dasharray: var(--percentages) 100;
+    }
+}
+
+.indicator {
+    display: flex;
+    min-height: 324px;
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+    min-width: 300px;
+    align-items: center;
+    border: 1px #DBDBDB solid;
+
+    &__name {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 300px;
+    }
+
+    &__mainadmin {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 300px;
+        flex-direction: column;
+    }
+
+    &__graphics {
+        width: 158px;
+    }
+
+    &__percentages {
+        position: relative;
+    }
+
+    &__containerpoints {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        bottom: 0%;
+        right: 0%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__circle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__line2f {
+        position: absolute;
+        width: 18px;
+        height: 1px;
+        background-color: #DBDBDB;
+        top: 146px;
+        left: 75px;
+        transform: rotate(58deg);
+    }
+
+    &__line2 {
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background-color: #DBDBDB;
+        top: 147px;
+        left: 75px;
+        transform: rotate(236deg);
+    }
+
+
+
+    &__point2 {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background-color: #DBDBDB;
+        top: 132px;
+        left: 74px;
+        border-radius: 50%;
+    }
+
+    &__point1admin {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background-color: #DBDBDB;
+        top: 132px;
+        left: 74px;
+        border-radius: 50%;
+    }
+
+    &__main-text {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    &__main-textadmin {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__textcumplience {
+        display: flex;
+        flex-direction: column;
+
+        &--meta {
+            padding: 10px 3px 10px 6px;
+            border-radius: 2px;
+            margin-top: 20px;
+        }
+
+        &--border {
+            border-top: #DBDBDB 1px solid;
+        }
+
+        &--borderadmin {
+            border-top: #DBDBDB 1px solid;
+        }
+
+        &--width1 {
+            width: 155px;
+        }
+
+        &--width2 {
+            width: 135px;
+        }
+    }
+
+    &__points {
+        padding: 5px;
+        color: white;
+        border-radius: 8px;
+        max-width: 80px;
+        text-align: center;
+    }
+
+    &__space {
+        width: 135px;
+        margin-left: 18px;
+    }
+
+
+
+}
+
+circle {
+    fill: none;
+    stroke-width: 26;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+    stroke-dasharray: 100 100;
+    stroke: #f4f4f4;
+}
+
+circle:nth-child(2) {
+    stroke: var(--color);
+    stroke-dasharray: 0 100;
+    animation: fill .35s linear forwards;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .indicator {
+
+        &__main {
+            flex-direction: row;
+            justify-content: unset;
+        }
+
+        &__main-text {
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &__textcumplience {
+            &--border {
+                border-bottom: #DBDBDB 1px solid;
+                border-top: unset;
+            }
+
+            &--meta {
+                margin-left: 10px;
+            }
+        }
+
+        &__line {
+            position: absolute;
+            width: 24px;
+            height: 1px;
+            background-color: #DBDBDB;
+            top: 61px;
+            left: 132px;
+            transform: rotate(-55deg);
+        }
+
+        &__point1 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: #DBDBDB;
+            top: 71px;
+            left: 132px;
+            border-radius: 50%;
+        }
+
+        &__line2f {
+            display: none;
+        }
+
+        &__point2 {
+            display: none;
+        }
+
+        &__space {
+            margin-left: unset;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
+    }
+}

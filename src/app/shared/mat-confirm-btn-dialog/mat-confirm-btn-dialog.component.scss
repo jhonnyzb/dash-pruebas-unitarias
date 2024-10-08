@@ -1,0 +1,112 @@
+  .tabInterCont {
+    max-height: 444px;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      justify-items: center;
+      align-items: center;
+      height: 34px;
+      background-color: #F4F4F4;
+
+    }
+
+    &__textInfo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      justify-items: center;
+      align-items: stretch;
+      padding: 1rem 0rem;
+      border-bottom: 1px solid #c3c3c345;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .containerDialogOk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+
+    &__contenIcon {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: flex-end;
+
+    }
+
+    &__contenIconBG {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      position: absolute;
+      right: 14px;
+      cursor: pointer;
+    }
+
+    &__contenIconBG:hover {
+      background-color: var(--ngx-valepro-color-tertiary);
+      opacity: .3;
+
+    }
+
+    &__contenIcon-icon {
+      color: var(--ngx-valepro-color-tertiary);
+      font-size: 1.8rem;
+    }
+
+    &__paginator {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+  }
+
+  .text-dialog {
+    color: var(---ngx-valepro-color-secondary);
+  }
+
+  .btn-box {
+    .submit_btn {
+      border-radius: 50px;
+      border: 2px solid var(--ngx-valepro-color-tertiary) !important;
+      min-height: 50px;
+      font-family: "bold";
+      font-size: 16px;
+      width: 260px;
+      margin: 1rem 1rem;
+      max-width: 200px;
+      color: var(---ngx-valepro-color-secondary);
+      background-color: var(--ngx-valepro-color-tertiary);
+    }
+
+  }
+
+  .text-center {
+    padding: 0.5rem 2rem;
+  }
+
+  * {
+    color: var(---ngx-valepro-color-secondary);
+  }

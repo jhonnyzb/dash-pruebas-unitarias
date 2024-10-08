@@ -1,0 +1,29 @@
+<div *ngIf="user.typeUser==='affiliate'" class="ranking">
+    <div class="ranking__info">
+        <div class="ranking__data ranking__data--ranking">
+            <span class="bold-24 primary">Ranking</span>
+            <span class="regular-16 primary ranking__aligntext">puntos totales ganados</span>
+        </div>
+        <div class="ranking__data--containerfeatures">
+            <div class="ranking__data ranking__data--feature">
+                <span class="bold-16 primary">País</span>
+                <span class="bold-32 primary">{{rankingPais}}</span>
+            </div>
+            <div class="ranking__data ranking__data--feature">
+                <span class="bold-16 primary">Regional</span>
+                <span class="bold-32 primary">{{rankingRegion}}</span>
+            </div>
+            <div class="ranking__data ranking__data--feature">
+                <span class="bold-16 primary">Agencia</span>
+                <span class="bold-32 primary">{{rankingAgencia}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="ranking__points">
+        <div class="ranking__pointscontain">
+            <span class="bold-24 primary">Puntos</span>
+            <span class="bold-24 primary">Totales:</span>
+        </div>
+        <span class="bold-24 primary ranking__pointsTotal">{{pointsTotal}}</span>
+    </div>
+</div>

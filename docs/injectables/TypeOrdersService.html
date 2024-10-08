@@ -1,0 +1,888 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>valepro-dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">valepro-dashboards documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >TypeOrdersService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/infrastructure/services/type-orders.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#apiUrlBase" >apiUrlBase</a>
+                            </li>
+                            <li>
+                                <a href="#apiUrlBaseUpdate" >apiUrlBaseUpdate</a>
+                            </li>
+                            <li>
+                                <a href="#apiUrlBaseUpdateFile" >apiUrlBaseUpdateFile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#downloadFormat" >downloadFormat</a>
+                            </li>
+                            <li>
+                                <a href="#getErrorProcessesTypeCash" >getErrorProcessesTypeCash</a>
+                            </li>
+                            <li>
+                                <a href="#getTypeCash" >getTypeCash</a>
+                            </li>
+                            <li>
+                                <a href="#uploadTypeOfCash" >uploadTypeOfCash</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: HttpClient)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/infrastructure/services/type-orders.service.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadFormat"></a>
+                    <span class="name">
+                        <span ><b>downloadFormat</b></span>
+                        <a href="#downloadFormat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadFormat(ProgramId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, ConceptId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/infrastructure/services/type-orders.service.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Descarga un formato específico.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ProgramId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del programa.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>ConceptId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del concepto.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;DownloadFormatResponseModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta con el formato descargado.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getErrorProcessesTypeCash"></a>
+                    <span class="name">
+                        <span ><b>getErrorProcessesTypeCash</b></span>
+                        <a href="#getErrorProcessesTypeCash"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getErrorProcessesTypeCash(data: <a href="../classes/DetailTypeModelRequestModel.html" target="_self">DetailTypeModelRequestModel</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/infrastructure/services/type-orders.service.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los procesos de error de tipo efectivo.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/DetailTypeModelRequestModel.html" target="_self" >DetailTypeModelRequestModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Los datos de la solicitud del modelo de tipo de detalle.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;ErrorsReportsResponseModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta base con el modelo de respuesta de los informes de errores.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTypeCash"></a>
+                    <span class="name">
+                        <span ><b>getTypeCash</b></span>
+                        <a href="#getTypeCash"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTypeCash(data: <a href="../classes/TypeModelRequestModel.html" target="_self">TypeModelRequestModel</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/app/infrastructure/services/type-orders.service.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el tipo de efectivo.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/TypeModelRequestModel.html" target="_self" >TypeModelRequestModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El modelo de solicitud de tipo.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;ReportsResponseModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta base con el modelo de respuesta de informes.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadTypeOfCash"></a>
+                    <span class="name">
+                        <span ><b>uploadTypeOfCash</b></span>
+                        <a href="#uploadTypeOfCash"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>uploadTypeOfCash(requestModel: <a href="../classes/UploadtypeOfCashRequestModel.html" target="_self">UploadtypeOfCashRequestModel</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/infrastructure/services/type-orders.service.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sube el tipo de efectivo.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>requestModel</td>
+                                            <td>
+                                                            <code><a href="../classes/UploadtypeOfCashRequestModel.html" target="_self" >UploadtypeOfCashRequestModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El modelo de solicitud para subir el tipo de efectivo.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ResponseBase&lt;UploadFileResponseModel&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un observable que emite una respuesta base con el modelo de respuesta de carga de archivo.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apiUrlBase"></a>
+                    <span class="name">
+                        <span ><b>apiUrlBase</b></span>
+                        <a href="#apiUrlBase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${environment.apiUrl}/redemption-api&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/infrastructure/services/type-orders.service.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apiUrlBaseUpdate"></a>
+                    <span class="name">
+                        <span ><b>apiUrlBaseUpdate</b></span>
+                        <a href="#apiUrlBaseUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${environment.apiUrl}/redemption-api&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/infrastructure/services/type-orders.service.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apiUrlBaseUpdateFile"></a>
+                    <span class="name">
+                        <span ><b>apiUrlBaseUpdateFile</b></span>
+                        <a href="#apiUrlBaseUpdateFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${environment.apiUrl}/program-api&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/infrastructure/services/type-orders.service.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { environment } from &#x27;../../../environments/environment&#x27;;
+import { HttpClient, HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import { Observable, catchError, map, throwError } from &#x27;rxjs&#x27;;
+import { ResponseBase } from &#x27;src/app/core/models/responseBase.model&#x27;;
+import { ErrorResponseModel } from &#x27;src/app/core/models/responseError.model&#x27;;
+import { ReportsMapper } from &#x27;src/app/core/mappers/reports.mapper&#x27;;
+import { ReportsResponseDto } from &#x27;../dto/reportsResponse.dto&#x27;;
+import { ReportsResponseModel } from &#x27;src/app/core/models/reportsResponse.model&#x27;;
+import { ReportsRepository } from &#x27;src/app/core/repositories/reportsCash.respository&#x27;;
+import { ErrorsReportsResponseDto } from &#x27;../dto/errorsReportsResponse.dto&#x27;;
+import { ErrorsReportsResponseModel } from &#x27;src/app/core/models/ErrorsReportsResponse.model&#x27;;
+import { UploadFileResponseModel, UploadtypeOfCashRequestModel } from &#x27;src/app/core/models/uploadTypeOfCash.model&#x27;;
+import { UploadFileResponseDto } from &#x27;../dto/uploadPresettlement.dto&#x27;;
+import { DownloadFormatResponseModel } from &#x27;src/app/core/models/downloadFormat.model&#x27;;
+import { DownloadFormatResponseDto } from &#x27;../dto/downloadFormat.dto&#x27;;
+import { TypeModelRequestModel } from &#x27;src/app/core/models/typeCashRequest.model&#x27;;
+import { DetailTypeModelRequestModel } from &#x27;src/app/core/models/detailTypeCashRequest.model&#x27;;
+
+
+
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class TypeOrdersService implements ReportsRepository {
+
+  apiUrlBase &#x3D; &#x60;${environment.apiUrl}/redemption-api&#x60;;
+  apiUrlBaseUpdate &#x3D; &#x60;${environment.apiUrl}/redemption-api&#x60;;
+  apiUrlBaseUpdateFile &#x3D; &#x60;${environment.apiUrl}/program-api&#x60;;
+
+
+  constructor(private http: HttpClient) { }
+
+
+
+  /**
+   * Descarga un formato específico.
+   *
+   * @param ProgramId - El ID del programa.
+   * @param ConceptId - El ID del concepto.
+   * @returns Un observable que emite una respuesta con el formato descargado.
+   * @throws Un error si la solicitud de descarga falla.
+   */
+  downloadFormat(ProgramId: number, ConceptId: number): Observable&lt;ResponseBase&lt;DownloadFormatResponseModel&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;DownloadFormatResponseDto&gt;&gt;(&#x60;${this.apiUrlBaseUpdateFile}/api/v1/Parameters/get-list?ProgramId&#x3D;${ProgramId}&amp;ConceptId&#x3D;${ConceptId}&#x60;)
+      .pipe(
+        map((result: ResponseBase&lt;DownloadFormatResponseDto&gt;) &#x3D;&gt; ({
+          codeId: result.codeId,
+          message: result.message,
+          data: ReportsMapper.mapResponseFileReportsDataApiToDomain(result.data)
+        })),
+        catchError((error: HttpErrorResponse) &#x3D;&gt; {
+          const errorResponse: ResponseBase&lt;ErrorResponseModel[]&gt; &#x3D; {
+            codeId: error.error.codeId,
+            message: error.error.message,
+            data: error.error.data
+          };
+          return throwError(() &#x3D;&gt; errorResponse);
+        })
+      );
+  }
+
+
+  /**
+   * Obtiene el tipo de efectivo.
+   *
+   * @param data - El modelo de solicitud de tipo.
+   * @returns Un observable que emite una respuesta base con el modelo de respuesta de informes.
+   * @throws Un error si la solicitud no se puede completar.
+   */
+  getTypeCash(data: TypeModelRequestModel): Observable&lt;ResponseBase&lt;ReportsResponseModel&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;ReportsResponseDto&gt;&gt;(&#x60;${this.apiUrlBase}/api/v1/processes?TypeOfCash&#x3D;${data.RedemptionProcessId}&amp;page&#x3D;${data.PageNumber}&amp;pageSize&#x3D;${data.PageSize}&#x60;)
+      .pipe(
+        map((result: ResponseBase&lt;ReportsResponseDto&gt;) &#x3D;&gt; ({
+          codeId: result.codeId,
+          message: result.message,
+          data: ReportsMapper.mapResponseReportsApiToDomain(result.data)
+        }
+        )),
+        catchError((error: HttpErrorResponse) &#x3D;&gt; {
+          let errorResponse: ResponseBase&lt;ErrorResponseModel[]&gt; &#x3D; {
+            codeId: error.error.codeId,
+            message: error.error.message,
+            data: error.error.data
+          }
+          return throwError(() &#x3D;&gt; errorResponse);
+        })
+      );
+  }
+
+
+  /**
+   * Obtiene los procesos de error de tipo efectivo.
+   *
+   * @param data - Los datos de la solicitud del modelo de tipo de detalle.
+   * @returns Un observable que emite una respuesta base con el modelo de respuesta de los informes de errores.
+   * @throws Devuelve un observable que emite una respuesta base con el modelo de respuesta de error en caso de error de red.
+   */
+  getErrorProcessesTypeCash(data: DetailTypeModelRequestModel): Observable&lt;ResponseBase&lt;ErrorsReportsResponseModel&gt;&gt; {
+    return this.http.get&lt;ResponseBase&lt;ErrorsReportsResponseDto&gt;&gt;(&#x60;${this.apiUrlBase}/api/v1/processes/errors-details?RedemptionProcessId&#x3D;${data.RedemptionProcessDetailId}&amp;page&#x3D;${data.PageNumber}&amp;pageSize&#x3D;${data.PageSize}&#x60;)
+      .pipe(
+        map((result: ResponseBase&lt;ErrorsReportsResponseDto&gt;) &#x3D;&gt; ({
+          codeId: result.codeId,
+          message: result.message,
+          data: ReportsMapper.mapResponseErrorsReportsApiToDomain(result.data)
+        }
+        )),
+        catchError((error: HttpErrorResponse) &#x3D;&gt; {
+          let errorResponse: ResponseBase&lt;ErrorResponseModel[]&gt; &#x3D; {
+            codeId: error.error.codeId,
+            message: error.error.message,
+            data: error.error.data
+          }
+          return throwError(() &#x3D;&gt; errorResponse);
+        })
+      );
+  }
+
+
+  /**
+   * Sube el tipo de efectivo.
+   *
+   * @param requestModel - El modelo de solicitud para subir el tipo de efectivo.
+   * @returns Un observable que emite una respuesta base con el modelo de respuesta de carga de archivo.
+   * @throws Un error si ocurre un error durante la solicitud HTTP.
+   */
+  uploadTypeOfCash(requestModel: UploadtypeOfCashRequestModel): Observable&lt;ResponseBase&lt;UploadFileResponseModel&gt;&gt; {
+    let request &#x3D; ReportsMapper.uploadTypeOfCashFromDomainToApi(requestModel);
+    return this.http.post&lt;ResponseBase&lt;UploadFileResponseDto&gt;&gt;(&#x60;${this.apiUrlBaseUpdate}/api/v1/processes&#x60;, request)
+      .pipe(
+        map((data: ResponseBase&lt;UploadFileResponseDto&gt;) &#x3D;&gt; ({
+          codeId: data.codeId,
+          message: data.message,
+          data: ReportsMapper.uploadFileFromApiToDomain(data.data)
+        }
+        )),
+        catchError((error: HttpErrorResponse) &#x3D;&gt; {
+          let errorResponse: ResponseBase&lt;ErrorResponseModel[]&gt; &#x3D; {
+            codeId: error.error.codeId,
+            message: error.error.Message,
+            data: error.error.Data
+          }
+          return throwError(() &#x3D;&gt; errorResponse);
+        })
+      );
+  }
+
+
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'TypeOrdersService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<div class="containerDialogErrros">
+
+  <div class="containerDialogErrros__contenIcon" (click)="closeDialog()">
+    <mat-icon class="containerDialogErrros__contenIcon-icon">close</mat-icon>
+    <div class="containerDialogErrros__contenIconBG"></div>
+  </div>
+
+  <div class="tablacont">
+
+
+    <div class="tabInterCont">
+      <div class="tabInterCont__title">
+        <span class="bold-16 primario">Número de identificación</span>
+        <span class="bold-16 primario">Detalles</span>
+      </div>
+      <div class="tabInterCont__textInfo" *ngFor="let process of processesDataFiltered">
+        <span class="regular-16 primario">{{process.IdentificationNumber}}</span>
+        <span class="regular-16 primario">{{process.ErrorDetail}}</span>
+      </div>
+
+    </div>
+
+    <div class="containerOrderReport__paginator regular-12 primario">
+      <mat-paginator [length]="pagination.TotalElements" [pageSize]="pagination.PageSize"
+        [pageIndex]="pagination.PageNumber - 1" (page)="onPageChange($event)" showFirstLastButtons
+        class="paginator regular-12 primario">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="containerDialogOk">
+
+  <div class="containerDialogOk__contenIcon" (click)="closeDialog()">
+    <mat-icon class="containerDialogOk__contenIcon-icon">close</mat-icon>
+    <div class="containerDialogOk__contenIconBG"></div>
+  </div>
+
+
+  <div class="tabInterCont">
+
+    <div class="info text-center">
+      <img [src]="dialogIcon" alt="">
+    </div>
+
+
+    <div class="container-fluid bold-32 terciary text-center block">
+      <span class="regular-24 primario text-dialog">{{confirmText}}</span>
+    </div>
+
+    <div class="btn-box" (click)="closeDialog()" *ngIf="isBtn">
+      <button class="submit_btn"> <span class="bold-16 primario">{{btn1_message}}</span></button>
+    </div>
+
+  </div>
+
+
+
+
+</div>

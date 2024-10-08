@@ -1,0 +1,5 @@
+<div class="gridindicators">
+   <div *ngFor="let item of indicators" class="gridindicators__indicator">
+      <app-indicator-individual [indicator]="item"  [user]="user" ></app-indicator-individual>
+   </div>
+</div>

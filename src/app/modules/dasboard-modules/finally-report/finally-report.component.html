@@ -1,0 +1,25 @@
+<app-header-report-finally 
+        [user]="user" 
+        [periods]="periods"
+        [information]="information"
+        (messageEventPeriod)="getInfoPeriod($event)"
+        [isSelectPeriod]="isSelectPeriod">
+</app-header-report-finally>
+<app-selector-report-finally 
+        [user]="user"
+        [segmentsList]="segmentos"
+        [regionalsList]="regionales"
+        [agenciesList]="agencias"
+        [rolsList]="roles"
+        (messageEventRegional)="getAgencies($event)"
+        (messageEventSelector)="getInfoIndicators($event)">
+</app-selector-report-finally>
+<app-indicator-report 
+        [user]="user" 
+        [indicators]="indicators">
+</app-indicator-report>
+<app-ranking 
+        [pointsTotal]="pointsTotal" 
+        [user]="user" 
+        [ranking]="ranking">
+</app-ranking>

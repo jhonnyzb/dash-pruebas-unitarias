@@ -1,0 +1,2861 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>valepro-dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">valepro-dashboards documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  OrderReportComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/dasboard-modules/order-report/order-report.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-order-report</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./order-report.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./order-report.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#alerTextError" >alerTextError</a>
+                            </li>
+                            <li>
+                                <a href="#base64Output" >base64Output</a>
+                            </li>
+                            <li>
+                                <a href="#fileExtension" >fileExtension</a>
+                            </li>
+                            <li>
+                                <a href="#fileName" >fileName</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#inputFile" >inputFile</a>
+                            </li>
+                            <li>
+                                <a href="#pagination" >pagination</a>
+                            </li>
+                            <li>
+                                <a href="#processesData" >processesData</a>
+                            </li>
+                            <li>
+                                <a href="#processesDataFiltered" >processesDataFiltered</a>
+                            </li>
+                            <li>
+                                <a href="#programId" >programId</a>
+                            </li>
+                            <li>
+                                <a href="#selected" >selected</a>
+                            </li>
+                            <li>
+                                <a href="#selectedValue" >selectedValue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#selectRef" >selectRef</a>
+                            </li>
+                            <li>
+                                <a href="#typecash" >typecash</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#convertFile" >convertFile</a>
+                            </li>
+                            <li>
+                                <a href="#downloadTemplate" >downloadTemplate</a>
+                            </li>
+                            <li>
+                                <a href="#getFileExtension" >getFileExtension</a>
+                            </li>
+                            <li>
+                                <a href="#getFileNameWithoutExtension" >getFileNameWithoutExtension</a>
+                            </li>
+                            <li>
+                                <a href="#getTypeCase" >getTypeCase</a>
+                            </li>
+                            <li>
+                                <a href="#goProcessing" >goProcessing</a>
+                            </li>
+                            <li>
+                                <a href="#isExcelFile" >isExcelFile</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFileSelected" >onFileSelected</a>
+                            </li>
+                            <li>
+                                <a href="#onPageChange" >onPageChange</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectionChange" >onSelectionChange</a>
+                            </li>
+                            <li>
+                                <a href="#openErrorPopUp" >openErrorPopUp</a>
+                            </li>
+                            <li>
+                                <a href="#sendGtmDashboard" >sendGtmDashboard</a>
+                            </li>
+                            <li>
+                                <a href="#updatePagination" >updatePagination</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(reportsRepository: <a href="../classes/ReportsRepository.html" target="_self">ReportsRepository</a>, dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, paginator: MatPaginatorIntl, toastrService: ToastrService, gtmEventRepository: <a href="../classes/GtmDispatchEventsRepository.html" target="_self">GtmDispatchEventsRepository</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reportsRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/ReportsRepository.html" target="_self" >ReportsRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>paginator</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatPaginatorIntl</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastrService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>gtmEventRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/GtmDispatchEventsRepository.html" target="_self" >GtmDispatchEventsRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertFile"></a>
+                    <span class="name">
+                        <span ><b>convertFile</b></span>
+                        <a href="#convertFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertFile(file: File)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="308"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:308</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un archivo a una cadena base64.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                        <code>File</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El archivo a convertir.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Una cadena Observable que representa el archivo convertido en base64.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadTemplate"></a>
+                    <span class="name">
+                        <span ><b>downloadTemplate</b></span>
+                        <a href="#downloadTemplate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadTemplate(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Descarga una plantilla de formato.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El evento que desencadenó la descarga de la plantilla.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Nada.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFileExtension"></a>
+                    <span class="name">
+                        <span ><b>getFileExtension</b></span>
+                        <a href="#getFileExtension"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFileExtension(filename: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="343"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:343</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la extensión de un archivo.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filename</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El nombre del archivo del cual se desea obtener la extensión.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>La extensión del archivo, incluyendo el punto (.) inicial, o una cadena vacía si no tiene extensión.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFileNameWithoutExtension"></a>
+                    <span class="name">
+                        <span ><b>getFileNameWithoutExtension</b></span>
+                        <a href="#getFileNameWithoutExtension"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFileNameWithoutExtension(filename: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="333"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:333</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el nombre de archivo sin la extensión.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filename</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El nombre del archivo con extensión.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El nombre del archivo sin la extensión.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTypeCase"></a>
+                    <span class="name">
+                        <span ><b>getTypeCase</b></span>
+                        <a href="#getTypeCase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTypeCase(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageSize: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="194"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:194</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el tipo de caso.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>value</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El valor del tipo de caso.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>pageNumber</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El número de página.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>pageSize</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El tamaño de página.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goProcessing"></a>
+                    <span class="name">
+                        <span ><b>goProcessing</b></span>
+                        <a href="#goProcessing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goProcessing()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Procesa la acción de subir un archivo de pedidos.</p>
+<p>Este método se utiliza para procesar la acción de subir un archivo de pedidos. Verifica si se ha seleccionado un archivo válido y lo envía al servidor para su procesamiento.
+Si el archivo no es válido, se muestra un diálogo de confirmación con un mensaje de error.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>No devuelve ningún valor.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isExcelFile"></a>
+                    <span class="name">
+                        <span ><b>isExcelFile</b></span>
+                        <a href="#isExcelFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isExcelFile(file: File)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="354"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:354</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Comprueba si el archivo es un archivo de Excel.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                        <code>File</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El archivo a comprobar.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Devuelve true si el archivo es un archivo de Excel (extensión .xlsx), de lo contrario devuelve false.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFileSelected"></a>
+                    <span class="name">
+                        <span ><b>onFileSelected</b></span>
+                        <a href="#onFileSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFileSelected(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="264"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:264</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el evento de selección de archivo.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El evento de selección de archivo.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPageChange"></a>
+                    <span class="name">
+                        <span ><b>onPageChange</b></span>
+                        <a href="#onPageChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPageChange(event: <a href="../classes/Page.html" target="_self">PageEvent</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="234"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:234</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el evento de cambio de página.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="../classes/Page.html" target="_self" >PageEvent</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto que contiene la información del evento de cambio de página.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectionChange"></a>
+                    <span class="name">
+                        <span ><b>onSelectionChange</b></span>
+                        <a href="#onSelectionChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectionChange(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza el valor seleccionado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>value</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El nuevo valor seleccionado.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openErrorPopUp"></a>
+                    <span class="name">
+                        <span ><b>openErrorPopUp</b></span>
+                        <a href="#openErrorPopUp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openErrorPopUp(RedemptionProcessId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="106"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre un cuadro de diálogo de errores.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>RedemptionProcessId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El ID del proceso de redención.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendGtmDashboard"></a>
+                    <span class="name">
+                        <span ><b>sendGtmDashboard</b></span>
+                        <a href="#sendGtmDashboard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendGtmDashboard(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="365"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:365</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Envía un evento de GTM para el panel de control.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>text</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El texto asociado al evento.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePagination"></a>
+                    <span class="name">
+                        <span ><b>updatePagination</b></span>
+                        <a href="#updatePagination"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updatePagination()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="252"
+                                    class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:252</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza la paginación de los datos filtrados.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>No devuelve ningún valor.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alerTextError"></a>
+                    <span class="name">
+                        <span ><b>alerTextError</b></span>
+                        <a href="#alerTextError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="base64Output"></a>
+                    <span class="name">
+                        <span ><b>base64Output</b></span>
+                        <a href="#base64Output"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fileExtension"></a>
+                    <span class="name">
+                        <span ><b>fileExtension</b></span>
+                        <a href="#fileExtension"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fileName"></a>
+                    <span class="name">
+                        <span ><b>fileName</b></span>
+                        <a href="#fileName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Sube un archivo con los pedidos&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inputFile"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>inputFile</b></span>
+                        <a href="#inputFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;inputFile&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pagination"></a>
+                    <span class="name">
+                        <span ><b>pagination</b></span>
+                        <a href="#pagination"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/PaginationRuleModel.html" target="_self" >PaginationRuleModel</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    PageSize: 10,
+    PageNumber: 0,
+    TotalElements: 0,
+    TotalPages: 0
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processesData"></a>
+                    <span class="name">
+                        <span ><b>processesData</b></span>
+                        <a href="#processesData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/DaumModel.html" target="_self" >DaumModel[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processesDataFiltered"></a>
+                    <span class="name">
+                        <span ><b>processesDataFiltered</b></span>
+                        <a href="#processesDataFiltered"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/DaumModel.html" target="_self" >DaumModel[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="programId"></a>
+                    <span class="name">
+                        <span ><b>programId</b></span>
+                        <a href="#programId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Number(getSession(&#x27;programId&#x27;)) as number</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selected"></a>
+                    <span class="name">
+                        <span ><b>selected</b></span>
+                        <a href="#selected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedValue"></a>
+                    <span class="name">
+                        <span ><b>selectedValue</b></span>
+                        <a href="#selectedValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectRef"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>selectRef</b></span>
+                        <a href="#selectRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;selectRef&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="typecash"></a>
+                    <span class="name">
+                        <span ><b>typecash</b></span>
+                        <a href="#typecash"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/dasboard-modules/order-report/order-report.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatPaginatorIntl, PageEvent } from &#x27;@angular/material/paginator&#x27;;
+import { DialogParams } from &#x27;src/app/core/models/dialogParams.model&#x27;;
+import { DaumModel, PaginationRuleModel, ReportsResponseModel } from &#x27;src/app/core/models/reportsResponse.model&#x27;;
+import { ResponseBase } from &#x27;src/app/core/models/responseBase.model&#x27;;
+import { ReportsRepository } from &#x27;src/app/core/repositories/reportsCash.respository&#x27;;
+import { DialogService } from &#x27;src/app/infrastructure/services/dialog.service&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+import { MatSelect } from &#x27;@angular/material/select&#x27;;
+import { Observable, ReplaySubject } from &#x27;rxjs&#x27;;
+import { UploadFileResponseModel, UploadtypeOfCashRequestModel } from &#x27;src/app/core/models/uploadTypeOfCash.model&#x27;;
+import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import { DownloadFormatResponseModel } from &#x27;src/app/core/models/downloadFormat.model&#x27;;
+import { getSession } from &#x27;src/app/utils/storage&#x27;;
+import { TypeModelRequestModel } from &#x27;src/app/core/models/typeCashRequest.model&#x27;;
+import { GTMSelectContent } from &#x27;src/app/core/models/gtmSelectContent.model&#x27;;
+import { GtmDispatchEventsRepository } from &#x27;src/app/core/repositories/gtmDispatchEvent.repository&#x27;;
+import { LoginResponseModel } from &#x27;src/app/core/models/loginResponse.model&#x27;;
+
+
+
+
+
+@Component({
+  selector: &#x27;app-order-report&#x27;,
+  templateUrl: &#x27;./order-report.component.html&#x27;,
+  styleUrls: [&#x27;./order-report.component.scss&#x27;]
+})
+export class OrderReportComponent implements OnInit {
+
+  processesData: DaumModel[] &#x3D; [];
+  processesDataFiltered: DaumModel[] &#x3D; [];
+  pagination: PaginationRuleModel &#x3D; {
+    PageSize: 10,
+    PageNumber: 0,
+    TotalElements: 0,
+    TotalPages: 0
+  };
+  selectedValue: number | null &#x3D; null;
+  fileName: string &#x3D; &#x27;Sube un archivo con los pedidos&#x27;;
+  fileExtension!: string;
+  base64Output!: string;
+  @ViewChild(&#x27;selectRef&#x27;) selectRef!: MatSelect;
+  @ViewChild(&#x27;inputFile&#x27;) inputFile!: ElementRef;
+  selected: boolean &#x3D; false;
+  typecash!: number;
+  programId: number &#x3D; Number(getSession(&#x27;programId&#x27;)) as number;
+  alerTextError: boolean &#x3D; false;
+
+  constructor(
+    private reportsRepository: ReportsRepository,
+    private dialogService: DialogService,
+    private paginator: MatPaginatorIntl,
+    private toastrService: ToastrService,
+    private gtmEventRepository: GtmDispatchEventsRepository
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.paginator.itemsPerPageLabel &#x3D; &quot;Ítems por página:&quot;;
+  }
+
+  /**
+   * Actualiza el valor seleccionado.
+   *
+   * @param value - El nuevo valor seleccionado.
+   */
+  onSelectionChange(value: number): void {
+    this.selectedValue &#x3D; value;
+  }
+
+
+  /**
+   * Descarga una plantilla de formato.
+   *
+   * @param event - El evento que desencadenó la descarga de la plantilla.
+   * @returns Nada.
+   */
+  downloadTemplate(event: any) {
+    const ProgramId &#x3D; this.programId;
+    const ConceptId &#x3D; event;
+    this.sendGtmDashboard(ConceptId &#x3D;&#x3D; 297 ? &#x27;Tipo Cash-Descargar formato&#x27; : &#x27;Tipo Cash-Generar reporte&#x27;);
+    this.reportsRepository.downloadFormat(ProgramId, ConceptId).subscribe({
+      next: (response: ResponseBase&lt;DownloadFormatResponseModel&gt;) &#x3D;&gt; {
+        window.open(response.data.ParametersList[0].ParameterValue, &#x27;_blank&#x27;);
+      },
+      error: (error: HttpErrorResponse) &#x3D;&gt; {
+        this.toastrService.error(error.message, undefined, {
+          timeOut: 9000,
+          progressBar: true,
+          progressAnimation: &#x27;increasing&#x27;,
+          tapToDismiss: false,
+          positionClass: &#x27;toast-top-center&#x27;,
+          closeButton: true,
+        });
+        return;
+      },
+    });
+  }
+
+  /**
+   * Abre un cuadro de diálogo de errores.
+   *
+   * @param RedemptionProcessId - El ID del proceso de redención.
+   */
+  openErrorPopUp(RedemptionProcessId: number) {
+    let params: DialogParams &#x3D; {
+      success: false,
+      confirmText: &quot;&quot;,
+      settlementId: RedemptionProcessId,
+    };
+    this.dialogService.openErrorsDialog(params);
+  }
+
+
+  /**
+   * Procesa la acción de subir un archivo de pedidos.
+   *
+   * @remarks
+   * Este método se utiliza para procesar la acción de subir un archivo de pedidos. Verifica si se ha seleccionado un archivo válido y lo envía al servidor para su procesamiento.
+   * Si el archivo no es válido, se muestra un diálogo de confirmación con un mensaje de error.
+   *
+   * @param fileName - El nombre del archivo seleccionado.
+   * @param typecash - El tipo de efectivo seleccionado.
+   * @param fileExtension - La extensión del archivo seleccionado.
+   * @param base64Output - El contenido del archivo seleccionado en formato base64.
+   *
+   * @returns No devuelve ningún valor.
+   */
+  goProcessing() {
+    if (this.fileName &#x3D;&#x3D;&#x3D; &#x27;Sube un archivo con los pedidos&#x27;) {
+      let params: DialogParams &#x3D; {
+        success: true,
+        error: true,
+        isbutton: true,
+        buttonNavigationText: &quot;Aceptar&quot;,
+        confirmText: &quot;Debes subir un archivo con los pedidos.&quot;
+      };
+
+      this.dialogService.openConfimDialog(params).afterClosed().subscribe((resp)&#x3D;&gt;{
+        this.sendGtmDashboard(&#x27;Tipo Cash-Aceptar&#x27;)
+
+      });
+      return;
+    }
+    this.sendGtmDashboard(&#x27;Tipo Cash-Procesar&#x27;);
+    let request: UploadtypeOfCashRequestModel &#x3D; {
+      TypeOfCash: +this.typecash,
+      File: {
+        Name: this.fileName,
+        Extension: this.fileExtension,
+        Data: this.base64Output
+      }
+    }
+
+    this.reportsRepository.uploadTypeOfCash(request).subscribe({
+      next: (res: ResponseBase&lt;UploadFileResponseModel&gt;) &#x3D;&gt; {
+
+        let params: DialogParams &#x3D; {
+          isbutton: false,
+          success: true,
+          navigation: &#x27;main/dashboard/order-report&#x27;,
+          confirmText: &quot;Tu archivo está siendo procesado y tardará un momento en finalizar. Consulta el estado en la tabla de carga de pedidos.&quot;,
+        };
+        this.dialogService.openConfimDialog(params);
+
+        this.fileName &#x3D; &#x27;&#x27;;
+        this.inputFile.nativeElement.value &#x3D; &quot;&quot;;
+        this.selected &#x3D; false;
+
+      },
+
+      error: (error: HttpErrorResponse): void &#x3D;&gt; {
+        let message &#x3D; error.error?.errorMessag || &#x27;Ocurrió un error desconocido&#x27;;
+        let params: DialogParams &#x3D; {
+          success: true,
+          confirmText: message,
+          error: true,
+          isbutton: false,
+        }
+        this.dialogService.openConfimDialog(params);
+      }
+    });
+  }
+
+
+  /**
+   * Obtiene el tipo de caso.
+   *
+   * @param value - El valor del tipo de caso.
+   * @param pageNumber - El número de página.
+   * @param pageSize - El tamaño de página.
+   */
+  getTypeCase(value: number, pageNumber: number, pageSize: number): void {
+    this.selectedValue &#x3D; value;
+    this.typecash &#x3D; value;
+
+    let data: TypeModelRequestModel &#x3D; {
+      RedemptionProcessId: value,
+      PageNumber: pageNumber,
+      PageSize: pageSize
+    };
+
+    this.reportsRepository.getTypeCash(data).subscribe({
+      next: (response: ResponseBase&lt;ReportsResponseModel&gt;): void &#x3D;&gt; {
+        this.processesData &#x3D; response.data.Processes.Data;
+        this.pagination &#x3D; response.data.Processes.Pagination;
+
+        const inicio &#x3D; (pageNumber - 1) * pageSize;
+        this.processesDataFiltered &#x3D; this.processesData.slice(inicio, inicio + pageSize);
+      },
+      error: (error: HttpErrorResponse): void &#x3D;&gt; {
+        let message &#x3D; error.error?.errorMessag || &#x27;Ocurrió un error desconocido&#x27;;
+        let params: DialogParams &#x3D; {
+          success: true,
+          confirmText: message,
+          error: true,
+          isbutton: false,
+        }
+        this.dialogService.openConfimDialog(params);
+      }
+    });
+  }
+
+
+  /**
+   * Maneja el evento de cambio de página.
+   *
+   * @param event - El objeto que contiene la información del evento de cambio de página.
+   * @param event.pageIndex - El índice de la página actual.
+   * @param event.pageSize - El tamaño de página actual.
+   * @returns void
+   */
+  onPageChange(event: PageEvent): void {
+    this.pagination.PageNumber &#x3D; event.pageIndex + 1;
+    this.pagination.PageSize &#x3D; event.pageSize;
+
+    if (this.selectedValue !&#x3D;&#x3D; null) {
+      this.getTypeCase(this.selectedValue, this.pagination.PageNumber, this.pagination.PageSize);
+    } else {
+      this.updatePagination();
+    }
+  }
+
+  /**
+   * Actualiza la paginación de los datos filtrados.
+   *
+   * @param {void} - No recibe ningún parámetro.
+   *
+   * @returns {void} - No devuelve ningún valor.
+   */
+  updatePagination(): void {
+    const inicio &#x3D; (this.pagination.PageNumber - 1) * this.pagination.PageSize;
+    this.processesDataFiltered &#x3D; this.processesData.slice(inicio, inicio + this.pagination.PageSize);
+  }
+
+
+  /**
+   * Maneja el evento de selección de archivo.
+   *
+   * @param event - El evento de selección de archivo.
+   * @returns void
+   */
+  onFileSelected(event: any) {
+    this.sendGtmDashboard(&#x27;Tipo Cash-Subir archivo&#x27;);
+    const file: File &#x3D; event.target.files[0];
+    if (!this.isExcelFile(file)) {
+      this.alerTextError &#x3D; true;
+      this.toastrService.error(&#x27;Error al subir archivo&#x27;, undefined, {
+        timeOut: 9000,
+        progressBar: true,
+        disableTimeOut: &#x27;extendedTimeOut&#x27;,
+        progressAnimation: &#x27;increasing&#x27;,
+        tapToDismiss: false,
+        positionClass: &#x27;toast-top-center&#x27;,
+        closeButton: true,
+      });
+      return;
+    }
+    this.alerTextError &#x3D; false;
+    this.fileName &#x3D; this.getFileNameWithoutExtension(file.name);
+    this.fileExtension &#x3D; this.getFileExtension(file.name);
+    this.convertFile(file).subscribe(base64 &#x3D;&gt; {
+      if (this.selectRef &amp;&amp; this.selectRef.value) {
+        this.selected &#x3D; true;
+      }
+
+      this.base64Output &#x3D; base64;
+      this.toastrService.success(&#x27;Archivo subido con éxito&#x27;, undefined, {
+        timeOut: 9000,
+        progressBar: true,
+        disableTimeOut: &#x27;extendedTimeOut&#x27;,
+        progressAnimation: &#x27;increasing&#x27;,
+        tapToDismiss: false,
+        positionClass: &#x27;toast-top-center&#x27;,
+        closeButton: true,
+      });
+    });
+  }
+
+
+  /**
+   * Convierte un archivo a una cadena base64.
+   *
+   * @param file - El archivo a convertir.
+   * @returns Una cadena Observable que representa el archivo convertido en base64.
+   */
+  convertFile(file: File): Observable&lt;string&gt; {
+    const result &#x3D; new ReplaySubject&lt;string&gt;(1);
+    const reader &#x3D; new FileReader();
+    reader.readAsArrayBuffer(file);
+    reader.onload &#x3D; (event) &#x3D;&gt; {
+      if (event &amp;&amp; event.target &amp;&amp; event.target.result) {
+        const arrayBuffer &#x3D; event.target.result;
+        const uint8Array &#x3D; new Uint8Array(arrayBuffer as ArrayBuffer);
+        let binaryString &#x3D; &#x27;&#x27;;
+        for (let i &#x3D; 0; i &lt; uint8Array.length; i++) {
+          binaryString +&#x3D; String.fromCharCode(uint8Array[i]);
+        }
+        const base64String &#x3D; btoa(binaryString);
+        result.next(base64String);
+      }
+    };
+    return result;
+  }
+
+  /**
+   * Obtiene el nombre de archivo sin la extensión.
+   *
+   * @param filename - El nombre del archivo con extensión.
+   * @returns El nombre del archivo sin la extensión.
+   */
+  getFileNameWithoutExtension(filename: string): string {
+    return filename.split(&#x27;.&#x27;).slice(0, -1).join(&#x27;.&#x27;);
+  }
+
+  /**
+   * Obtiene la extensión de un archivo.
+   *
+   * @param filename - El nombre del archivo del cual se desea obtener la extensión.
+   * @returns La extensión del archivo, incluyendo el punto (.) inicial, o una cadena vacía si no tiene extensión.
+   */
+  getFileExtension(filename: string): string {
+    const parts &#x3D; filename.split(&#x27;.&#x27;);
+    return parts.length &gt; 1 ? &#x27;.&#x27; + parts[parts.length - 1] : &#x27;&#x27;;
+  }
+
+  /**
+   * Comprueba si el archivo es un archivo de Excel.
+   *
+   * @param file - El archivo a comprobar.
+   * @returns Devuelve true si el archivo es un archivo de Excel (extensión .xlsx), de lo contrario devuelve false.
+   */
+  isExcelFile(file: File): boolean {
+    const extension &#x3D; file.name.split(&#x27;.&#x27;).pop()?.toLowerCase();
+    return extension &#x3D;&#x3D;&#x3D; &#x27;xlsx&#x27;;
+  }
+
+
+  /**
+   * Envía un evento de GTM para el panel de control.
+   *
+   * @param text - El texto asociado al evento.
+   */
+  sendGtmDashboard(text: string) {
+    const loginUser: LoginResponseModel &#x3D; getSession&lt;LoginResponseModel&gt;(&#x27;userLoginData&#x27;)!;
+    let tagData: GTMSelectContent &#x3D; {
+      event: &quot;Select_content&quot;,
+      ParameterTarget: &quot;Home&quot;,
+      ParameterType: &#x27;button&#x27;,
+      ParameterLocation: &#x27;Cabecera&#x27;,
+      ParameterCategory: &#x27;Home - Pedidos Tipo Cash&#x27;,
+      IDAccount: &#x27;&#x27;,
+      IDProgram: loginUser.programId,
+      IDPerson: loginUser.personId,
+      UserName: loginUser.userName,
+      ParameterText: text,
+      ParameterItemID: &quot;0&quot;,
+    };
+    this.gtmEventRepository.sendEvent(tagData);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;containerOrderReport&quot;&gt;
+  &lt;div class&#x3D;&quot;containerOrderReport__title&quot;&gt;
+    &lt;span class&#x3D;&quot;bold-32 primario mb-2&quot;&gt;Validación de pedidos tipo cash&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;containerOrderReport__btnOrder&quot;&gt;
+
+    &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-text&quot;&gt;
+      &lt;span class&#x3D;&quot;bold-16 primario&quot;&gt;Formato carga de pedidos&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-boxbtn&quot;&gt;
+      &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-btn&quot; data-template&#x3D;&quot;1&quot; (click)&#x3D;&quot;downloadTemplate(297)&quot;&gt;
+        &lt;span class&#x3D;&quot;bold-16 primario&quot;&gt;Descargar formato &lt;/span&gt;&lt;mat-icon&gt;file_download&lt;/mat-icon&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;containerOrderReport__btnOrder2&quot;&gt;
+    &lt;mat-form-field class&#x3D;&quot;containerOrderReport__btnOrder-select&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;regular-16 primario&quot;&gt;Tipo de Cash&lt;/mat-label&gt;
+      &lt;mat-select (selectionChange)&#x3D;&quot;getTypeCase($event.value, 1, 10)&quot; class&#x3D;&quot;regular-16 primario&quot;&gt;
+        &lt;mat-option class&#x3D;&quot;containerOrderReport__btnOrder-selectOption regular-16 primario&quot; value&#x3D;&quot;1&quot;&gt;Nequi&lt;/mat-option&gt;
+        &lt;mat-option class&#x3D;&quot;containerOrderReport__btnOrder-selectOption regular-16 primario&quot;
+          value&#x3D;&quot;2&quot;&gt;Daviplata&lt;/mat-option&gt;
+      &lt;/mat-select&gt;
+    &lt;/mat-form-field&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;containerOrderReport__btnOrder&quot;&gt;
+
+    &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-text&quot;&gt;
+      &lt;span class&#x3D;&quot;bold-16 primario&quot;&gt;Reporte de recargas&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-boxbtn&quot; [ngClass]&#x3D;&quot;{&#x27;opacidad&#x27;: !selectedValue}&quot;&gt;
+      &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-btn&quot; (click)&#x3D;&quot;downloadTemplate(298)&quot;
+        [ngClass]&#x3D;&quot;{&#x27;opacidadBG&#x27;: !selectedValue}&quot;&gt;
+        &lt;span class&#x3D;&quot;bold-16  primario&quot;&gt;Generar reporte BI &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;containerOrderReport__btnOrder&quot;&gt;
+
+    &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-text&quot;&gt;
+      &lt;span class&#x3D;&quot;bold-16 primario&quot;&gt;Cargue de pedidos&lt;/span&gt;
+      &lt;span *ngIf&#x3D;&quot;!alerTextError&quot; [ngClass]&#x3D;&quot;{&#x27;validateFile&#x27;: fileName !&#x3D;&#x3D; &#x27;Sube un archivo con los pedidos&#x27;}&quot;
+        class&#x3D;&quot;regular-14 primario containerOrderReport__btnOrder-text2&quot;&gt;{{fileName}}&lt;/span&gt;
+      &lt;span *ngIf&#x3D;&quot;alerTextError&quot; class&#x3D;&quot;regular-14 containerOrderReport__btnOrder-textError&quot;&gt;Archivo
+        incorrecto&lt;/span&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-boxbtn&quot; [ngClass]&#x3D;&quot;{&#x27;opacidad&#x27;: !selectedValue}&quot;&gt;
+      &lt;input type&#x3D;&quot;file&quot; id&#x3D;&quot;fileInput&quot; style&#x3D;&quot;display: none&quot; accept&#x3D;&quot;.xlsx&quot; (change)&#x3D;&quot;onFileSelected($event)&quot;
+        #fileInput&gt;
+      &lt;div class&#x3D;&quot;containerOrderReport__btnOrder-btn&quot; [ngClass]&#x3D;&quot;{&#x27;opacidadBG&#x27;: !selectedValue}&quot;
+        (click)&#x3D;&quot;fileInput.click()&quot;&gt;
+        &lt;span class&#x3D;&quot;bold-16 primario&quot;&gt;Subir archivo&lt;/span&gt;&lt;mat-icon&gt;upload&lt;/mat-icon&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;containerOrderReport__contBtn&quot; [ngClass]&#x3D;&quot;{&#x27;opacidad&#x27;: !selectedValue}&quot;&gt;
+    &lt;div class&#x3D;&quot;containerOrderReport__BtnProcess&quot; (click)&#x3D;&quot;goProcessing()&quot;&gt;
+      &lt;span class&#x3D;&quot;bold-16 primario&quot;&gt;Procesar&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;containerOrderReport__contTable&quot;&gt;
+    &lt;span class&#x3D;&quot;containerOrderReport__contTable-title bold-16 primario&quot;&gt;Estado de carga de pedidos&lt;/span&gt;
+    &lt;div class&#x3D;&quot;containerOrderReport__table-full&quot;&gt;
+      &lt;!-- Titulo de tabla  --&gt;
+      &lt;div class&#x3D;&quot;containerOrderReport__table-bar&quot;&gt;
+        &lt;div class&#x3D;&quot;bold-14 primario&quot;&gt;Fecha&lt;/div&gt;
+        &lt;div class&#x3D;&quot;bold-14 primario&quot;&gt;Cash&lt;/div&gt;
+        &lt;div class&#x3D;&quot;bold-14 primario&quot;&gt;Estado del procesamiento&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Contenido de tabla row --&gt;
+      &lt;div class&#x3D;&quot;containerOrderReport__tableRow&quot; *ngFor&#x3D;&quot;let process of processesDataFiltered&quot;&gt;
+        &lt;div class&#x3D;&quot;containerOrderReport__table-cont&quot;&gt;
+          &lt;div class&#x3D;&quot;regular-16 primario&quot;&gt;{{ process.DateRegister | date: &#x27;dd/MM/yyyy-HH:mm&#x27; }}&lt;/div&gt;
+          &lt;div class&#x3D;&quot;bold-14 primario&quot;&gt;{{ process.ProcessType }}&lt;/div&gt;
+          &lt;div class&#x3D;&quot;bold-12 primario&quot; [ngClass]&#x3D;&quot;{
+           &#x27;containerOrderReport__table-BtnOK&#x27;: process.StatusId &#x3D;&#x3D;&#x3D; 127 || process.StatusId &#x3D;&#x3D;&#x3D;50,
+           &#x27;containerOrderReport__table-BtnProcess&#x27;: process.StatusId &#x3D;&#x3D;&#x3D; 128,
+           &#x27;containerOrderReport__table-BtnError&#x27;: process.StatusId &#x3D;&#x3D;&#x3D; 129,
+           &#x27;containerOrderReport__table-BtnErrors&#x27;: process.StatusId &#x3D;&#x3D;&#x3D; 130
+         }&quot;&gt;
+            &lt;span class&#x3D;&quot;primario&quot;&gt;{{ process.Status }}&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot; process.StatusId &#x3D;&#x3D;&#x3D; 129&quot; class&#x3D;&quot;containerOrderReport__table-contError&quot;
+          (click)&#x3D;&quot;openErrorPopUp(process.RedemptionProcessId)&quot;&gt;
+          &lt;span class&#x3D;&quot;bold-14 primario&quot;&gt;Ver errores&lt;/span&gt;
+          &lt;mat-icon&gt;keyboard_arrow_down&lt;/mat-icon&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;containerOrderReport__paginator regular-12 primario&quot;&gt;
+      &lt;mat-paginator [length]&#x3D;&quot;pagination.TotalElements&quot; [pageSize]&#x3D;&quot;pagination.PageSize&quot;
+        [pageIndex]&#x3D;&quot;pagination.PageNumber - 1&quot; (page)&#x3D;&quot;onPageChange($event)&quot; showFirstLastButtons
+        class&#x3D;&quot;paginator regular-12 primario&quot;&gt;
+      &lt;/mat-paginator&gt;
+    &lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./order-report.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.containerOrderReport {
+  max-width: 732px;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+
+  &amp;__tittel {
+    color: var(--ngx-valepro-color-secondary);
+  }
+
+  &amp;__btnOrder {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 2rem 0rem;
+    border-bottom: 1px solid #DBDBDB;
+    align-items: center;
+  }
+
+  &amp;__btnOrder2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: .5rem 0rem;
+    border-bottom: none;
+    align-items: center;
+  }
+
+  &amp;__btnOrder-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  &amp;__btnOrder-text2 {
+    opacity: 0.5;
+    padding: 1rem;
+
+  }
+
+  &amp;__btnOrder-textError {
+    opacity: 1;
+    padding: 1rem;
+    color: #FA2323;
+
+  }
+
+
+  &amp;__btnOrder-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3px;
+    border-radius: 50px;
+    border: 2px solid var(--ngx-valepro-color-tertiary);
+    min-width: 260px;
+    min-height: 44px;
+
+
+  }
+
+  &amp;__btnOrder-select {
+    width: 100%;
+  }
+
+  &amp;__btnOrder-selectOption {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+
+  &amp;__contBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  &amp;__BtnProcess {
+    border-radius: 22px;
+    border: none;
+    background-color: var(--ngx-valepro-color-tertiary);
+    min-height: 44px;
+    font-family: bold;
+    font-size: 16px;
+    color: #1a0c3f;
+    width: 100%;
+    margin: 2rem 0rem;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &amp;__contTable-title {
+    padding: 1rem 0rem;
+  }
+
+  &amp;__table-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    background-color: #F4F4F4;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #C3C3C3;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    width: 100%;
+    min-width: 620px;
+  }
+
+  &amp;__table-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    background-color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+
+  &amp;__tableRow {
+    border-bottom: 2px solid #C3C3C3;
+    width: 100%;
+    min-width: 620px;
+  }
+
+  &amp;__table-contError {
+    background-color: rgba(26, 12, 63, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0rem 1rem .5rem 1rem;
+    padding: .8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border-bottom: 2px solid #C3C3C3;
+    width: 85vw;
+    max-width: 300px;
+
+    mat-icon {
+      font-size: 1.5rem;
+      color: var(--ngx-valepro-color-secondary);
+    }
+  }
+
+
+
+  &amp;__table-BtnOK {
+    span {
+      height: 33px;
+      background-color: #FBD881;
+      border: 1px solid #F9BE2C;
+      padding: .5rem;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+  }
+
+  &amp;__table-BtnProcess {
+    span {
+      height: 33px;
+      background-color: #B9DC8C;
+      border: 1px solid #8DC53F;
+      padding: .5rem;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+  }
+
+  &amp;__table-BtnError {
+    span {
+      height: 33px;
+      background-color: #FC7B7B;
+      border: 1px solid #FA2323;
+      padding: .5rem;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+  }
+
+  &amp;__table-BtnErrors {
+    span {
+      height: 33px;
+      background-color: #FC7B7B;
+      border: 1px solid #FA2323;
+      padding: .5rem;
+      text-transform: uppercase;
+      border-radius: 4px;
+      text-wrap: nowrap;
+    }
+  }
+
+  &amp;__paginator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: transparent;
+    color: var(--ngx-valepro-color-secondary);
+  }
+
+  &amp;__table-full {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1607843137);
+    border-radius: 8px;
+    width: 100%;
+    min-width: 328px;
+    overflow-y: auto;
+  }
+}
+
+.tabInterCont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+
+  &amp;__title {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: stretch;
+  }
+
+  &amp;__textInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: stretch;
+    padding: 1rem 0rem;
+    border-bottom: 1px solid #C3C3C3;
+
+    &amp;:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+
+::ng-deep.mat-mdc-paginator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end !important;
+}
+
+mat-icon {
+  color: var(--ngx-valepro-color-secondary);
+}
+
+
+div#mat-paginator-page-size-label-0 {
+  color: var(--ngx-valepro-color-secondary);
+}
+
+mat-paginator {
+  background-color: rgba(255, 255, 255, 0);
+  margin: .5rem 0rem;
+}
+
+
+::ng-deep.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple) {
+  background-color: var(--mat-option-selected-state-layer-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//Tablet
+
+@media screen and (min-width: 350px) and (max-width: 767px) {
+
+  .containerOrderReport {
+    &amp;__table-contError {
+      width: 85vw;
+      max-width: 650px;
+
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .containerOrderReport {
+    &amp;__btnOrder {
+      flex-direction: row;
+
+    }
+
+    &amp;__btnOrder-text {
+      text-align: left;
+    }
+
+    &amp;__table-full {
+      width: 720px;
+    }
+
+    &amp;__tableRow {
+      width: 720px;
+    }
+
+    &amp;__table-bar {
+      width: 720px;
+    }
+
+    &amp;__table-contError {
+      width: 92%;
+      max-width: 700px;
+    }
+
+    &amp;__paginator {
+      justify-content: flex-end;
+    }
+
+  }
+
+
+  ::ng-deep.mat-mdc-paginator-container {
+    flex-direction: row;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+
+
+//Web
+
+@media screen and (min-width: 1024px) {
+  .containerOrderReport {
+    &amp;__btnOrder {
+      flex-direction: row;
+
+    }
+
+    &amp;__btnOrder-text {
+      text-align: left;
+    }
+
+    &amp;__table-full {
+      width: 100%;
+    }
+
+    &amp;__tableRow {
+      width: 100%;
+    }
+
+    &amp;__table-bar {
+      width: 100%;
+    }
+
+    &amp;__table-contError {
+      width: 92%;
+      max-width: 700px;
+    }
+
+    &amp;__paginator {
+      justify-content: flex-end;
+    }
+  }
+
+  ::ng-deep.mat-mdc-paginator-container {
+    flex-direction: row;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+
+.opacidad {
+  opacity: .6;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+  pointer-events: none;
+
+
+}
+
+.opacidadBG {
+  background-color: #DBDBDB;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="containerOrderReport">  <div class="containerOrderReport__title">    <span class="bold-32 primario mb-2">Validación de pedidos tipo cash</span>  </div>  <div class="containerOrderReport__btnOrder">    <div class="containerOrderReport__btnOrder-text">      <span class="bold-16 primario">Formato carga de pedidos</span>    </div>    <div class="containerOrderReport__btnOrder-boxbtn">      <div class="containerOrderReport__btnOrder-btn" data-template="1" (click)="downloadTemplate(297)">        <span class="bold-16 primario">Descargar formato </span><mat-icon>file_download</mat-icon>      </div>    </div>  </div>  <div class="containerOrderReport__btnOrder2">    <mat-form-field class="containerOrderReport__btnOrder-select">      <mat-label class="regular-16 primario">Tipo de Cash</mat-label>      <mat-select (selectionChange)="getTypeCase($event.value, 1, 10)" class="regular-16 primario">        <mat-option class="containerOrderReport__btnOrder-selectOption regular-16 primario" value="1">Nequi</mat-option>        <mat-option class="containerOrderReport__btnOrder-selectOption regular-16 primario"          value="2">Daviplata</mat-option>      </mat-select>    </mat-form-field>  </div>  <div class="containerOrderReport__btnOrder">    <div class="containerOrderReport__btnOrder-text">      <span class="bold-16 primario">Reporte de recargas</span>    </div>    <div class="containerOrderReport__btnOrder-boxbtn" [ngClass]="{\'opacidad\': !selectedValue}">      <div class="containerOrderReport__btnOrder-btn" (click)="downloadTemplate(298)"        [ngClass]="{\'opacidadBG\': !selectedValue}">        <span class="bold-16  primario">Generar reporte BI </span>      </div>    </div>  </div>  <div class="containerOrderReport__btnOrder">    <div class="containerOrderReport__btnOrder-text">      <span class="bold-16 primario">Cargue de pedidos</span>      <span *ngIf="!alerTextError" [ngClass]="{\'validateFile\': fileName !== \'Sube un archivo con los pedidos\'}"        class="regular-14 primario containerOrderReport__btnOrder-text2">{{fileName}}</span>      <span *ngIf="alerTextError" class="regular-14 containerOrderReport__btnOrder-textError">Archivo        incorrecto</span>    </div>    <div class="containerOrderReport__btnOrder-boxbtn" [ngClass]="{\'opacidad\': !selectedValue}">      <input type="file" id="fileInput" style="display: none" accept=".xlsx" (change)="onFileSelected($event)"        #fileInput>      <div class="containerOrderReport__btnOrder-btn" [ngClass]="{\'opacidadBG\': !selectedValue}"        (click)="fileInput.click()">        <span class="bold-16 primario">Subir archivo</span><mat-icon>upload</mat-icon>      </div>    </div>  </div>  <div class="containerOrderReport__contBtn" [ngClass]="{\'opacidad\': !selectedValue}">    <div class="containerOrderReport__BtnProcess" (click)="goProcessing()">      <span class="bold-16 primario">Procesar</span>    </div>  </div>  <div class="containerOrderReport__contTable">    <span class="containerOrderReport__contTable-title bold-16 primario">Estado de carga de pedidos</span>    <div class="containerOrderReport__table-full">      <!-- Titulo de tabla  -->      <div class="containerOrderReport__table-bar">        <div class="bold-14 primario">Fecha</div>        <div class="bold-14 primario">Cash</div>        <div class="bold-14 primario">Estado del procesamiento</div>      </div>      <!-- Contenido de tabla row -->      <div class="containerOrderReport__tableRow" *ngFor="let process of processesDataFiltered">        <div class="containerOrderReport__table-cont">          <div class="regular-16 primario">{{ process.DateRegister | date: \'dd/MM/yyyy-HH:mm\' }}</div>          <div class="bold-14 primario">{{ process.ProcessType }}</div>          <div class="bold-12 primario" [ngClass]="{           \'containerOrderReport__table-BtnOK\': process.StatusId === 127 || process.StatusId ===50,           \'containerOrderReport__table-BtnProcess\': process.StatusId === 128,           \'containerOrderReport__table-BtnError\': process.StatusId === 129,           \'containerOrderReport__table-BtnErrors\': process.StatusId === 130         }">            <span class="primario">{{ process.Status }}</span>          </div>        </div>        <div *ngIf=" process.StatusId === 129" class="containerOrderReport__table-contError"          (click)="openErrorPopUp(process.RedemptionProcessId)">          <span class="bold-14 primario">Ver errores</span>          <mat-icon>keyboard_arrow_down</mat-icon>        </div>      </div>    </div>    <div class="containerOrderReport__paginator regular-12 primario">      <mat-paginator [length]="pagination.TotalElements" [pageSize]="pagination.PageSize"        [pageIndex]="pagination.PageNumber - 1" (page)="onPageChange($event)" showFirstLastButtons        class="paginator regular-12 primario">      </mat-paginator>    </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DasboardModulesComponent', 'selector': 'app-dasboard-modules'},{'name': 'FinallyReportComponent', 'selector': 'app-finally-report'},{'name': 'HeaderReportComponent', 'selector': 'app-header-report'},{'name': 'HeaderReportFinallyComponent', 'selector': 'app-header-report-finally'},{'name': 'IndicatorIndividualComponent', 'selector': 'app-indicator-individual'},{'name': 'IndicatorReportComponent', 'selector': 'app-indicator-report'},{'name': 'MatConfirmBtnDialogComponent', 'selector': 'app-mat-confirm-btn-dialog'},{'name': 'MatErrorsDialogComponent', 'selector': 'app-mat-errors-dialog'},{'name': 'MonitoringReportComponent', 'selector': 'app-monitoring-report'},{'name': 'OrderReportComponent', 'selector': 'app-order-report'},{'name': 'PaginateComponent', 'selector': 'app-paginate'},{'name': 'RankingComponent', 'selector': 'app-ranking'},{'name': 'SelectorReportComponent', 'selector': 'app-selector-report'},{'name': 'SelectorReportFinallyComponent', 'selector': 'app-selector-report-finally'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'OrderReportComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrderReportComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

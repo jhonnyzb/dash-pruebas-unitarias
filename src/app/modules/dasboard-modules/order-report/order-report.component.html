@@ -1,0 +1,113 @@
+<div class="containerOrderReport">
+  <div class="containerOrderReport__title">
+    <span class="bold-32 primario mb-2">Validación de pedidos tipo cash</span>
+  </div>
+
+  <div class="containerOrderReport__btnOrder">
+
+    <div class="containerOrderReport__btnOrder-text">
+      <span class="bold-16 primario">Formato carga de pedidos</span>
+    </div>
+
+    <div class="containerOrderReport__btnOrder-boxbtn">
+      <div class="containerOrderReport__btnOrder-btn" data-template="1" (click)="downloadTemplate(297)">
+        <span class="bold-16 primario">Descargar formato </span><mat-icon>file_download</mat-icon>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="containerOrderReport__btnOrder2">
+    <mat-form-field class="containerOrderReport__btnOrder-select">
+      <mat-label class="regular-16 primario">Tipo de Cash</mat-label>
+      <mat-select (selectionChange)="getTypeCase($event.value, 1, 10)" class="regular-16 primario">
+        <mat-option class="containerOrderReport__btnOrder-selectOption regular-16 primario" value="1">Nequi</mat-option>
+        <mat-option class="containerOrderReport__btnOrder-selectOption regular-16 primario"
+          value="2">Daviplata</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="containerOrderReport__btnOrder">
+
+    <div class="containerOrderReport__btnOrder-text">
+      <span class="bold-16 primario">Reporte de recargas</span>
+    </div>
+
+    <div class="containerOrderReport__btnOrder-boxbtn" [ngClass]="{'opacidad': !selectedValue}">
+      <div class="containerOrderReport__btnOrder-btn" (click)="downloadTemplate(298)"
+        [ngClass]="{'opacidadBG': !selectedValue}">
+        <span class="bold-16  primario">Generar reporte BI </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="containerOrderReport__btnOrder">
+
+    <div class="containerOrderReport__btnOrder-text">
+      <span class="bold-16 primario">Cargue de pedidos</span>
+      <span *ngIf="!alerTextError" [ngClass]="{'validateFile': fileName !== 'Sube un archivo con los pedidos'}"
+        class="regular-14 primario containerOrderReport__btnOrder-text2">{{fileName}}</span>
+      <span *ngIf="alerTextError" class="regular-14 containerOrderReport__btnOrder-textError">Archivo
+        incorrecto</span>
+    </div>
+
+
+    <div class="containerOrderReport__btnOrder-boxbtn" [ngClass]="{'opacidad': !selectedValue}">
+      <input type="file" id="fileInput" style="display: none" accept=".xlsx" (change)="onFileSelected($event)"
+        #fileInput>
+      <div class="containerOrderReport__btnOrder-btn" [ngClass]="{'opacidadBG': !selectedValue}"
+        (click)="fileInput.click()">
+        <span class="bold-16 primario">Subir archivo</span><mat-icon>upload</mat-icon>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="containerOrderReport__contBtn" [ngClass]="{'opacidad': !selectedValue}">
+    <div class="containerOrderReport__BtnProcess" (click)="goProcessing()">
+      <span class="bold-16 primario">Procesar</span>
+    </div>
+  </div>
+
+  <div class="containerOrderReport__contTable">
+    <span class="containerOrderReport__contTable-title bold-16 primario">Estado de carga de pedidos</span>
+    <div class="containerOrderReport__table-full">
+      <!-- Titulo de tabla  -->
+      <div class="containerOrderReport__table-bar">
+        <div class="bold-14 primario">Fecha</div>
+        <div class="bold-14 primario">Cash</div>
+        <div class="bold-14 primario">Estado del procesamiento</div>
+      </div>
+
+      <!-- Contenido de tabla row -->
+      <div class="containerOrderReport__tableRow" *ngFor="let process of processesDataFiltered">
+        <div class="containerOrderReport__table-cont">
+          <div class="regular-16 primario">{{ process.DateRegister | date: 'dd/MM/yyyy-HH:mm' }}</div>
+          <div class="bold-14 primario">{{ process.ProcessType }}</div>
+          <div class="bold-12 primario" [ngClass]="{
+           'containerOrderReport__table-BtnOK': process.StatusId === 127 || process.StatusId ===50,
+           'containerOrderReport__table-BtnProcess': process.StatusId === 128,
+           'containerOrderReport__table-BtnError': process.StatusId === 129,
+           'containerOrderReport__table-BtnErrors': process.StatusId === 130
+         }">
+            <span class="primario">{{ process.Status }}</span>
+          </div>
+        </div>
+        <div *ngIf=" process.StatusId === 129" class="containerOrderReport__table-contError"
+          (click)="openErrorPopUp(process.RedemptionProcessId)">
+          <span class="bold-14 primario">Ver errores</span>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="containerOrderReport__paginator regular-12 primario">
+      <mat-paginator [length]="pagination.TotalElements" [pageSize]="pagination.PageSize"
+        [pageIndex]="pagination.PageNumber - 1" (page)="onPageChange($event)" showFirstLastButtons
+        class="paginator regular-12 primario">
+      </mat-paginator>
+    </div>

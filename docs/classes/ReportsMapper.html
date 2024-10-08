@@ -1,0 +1,1832 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>valepro-dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">valepro-dashboards documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >ReportsMapper</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/mappers/reports.mapper.ts</code>
+        </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#fromDomainToApiTypeCash" >fromDomainToApiTypeCash</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseErrorsPagination" >mapResponseErrorsPagination</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseErrorsReports" >mapResponseErrorsReports</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseErrorsReportsApiToDomain" >mapResponseErrorsReportsApiToDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseErrorsReportsDataApiToDomain" >mapResponseErrorsReportsDataApiToDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseFileReportsDataApiToDomain" >mapResponseFileReportsDataApiToDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseFilesBIReports" >mapResponseFilesBIReports</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponsePagination" >mapResponsePagination</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseReports" >mapResponseReports</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseReportsApiToDomain" >mapResponseReportsApiToDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapResponseReportsDataApiToDomain" >mapResponseReportsDataApiToDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#uploadFileFromApiToDomain" >uploadFileFromApiToDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#uploadTypeOfCashFileFromApiToDomain" >uploadTypeOfCashFileFromApiToDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#uploadTypeOfCashFileFromDomainToApi" >uploadTypeOfCashFileFromDomainToApi</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#uploadTypeOfCashFromApiToDomain" >uploadTypeOfCashFromApiToDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#uploadTypeOfCashFromDomainToApi" >uploadTypeOfCashFromDomainToApi</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fromDomainToApiTypeCash"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>fromDomainToApiTypeCash</b></span>
+                        <a href="#fromDomainToApiTypeCash"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fromDomainToApiTypeCash(data: <a href="../classes/TypeModelRequestModel.html" target="_self">TypeModelRequestModel</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="240"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:240</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un objeto de dominio de tipo TypeModelRequestModel a un objeto de tipo TypeModelRequestDto para la API.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/TypeModelRequestModel.html" target="_self" >TypeModelRequestModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto de dominio de tipo TypeModelRequestModel a convertir.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/TypeModelRequestDto.html" target="_self" >TypeModelRequestDto</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El objeto de tipo TypeModelRequestDto convertido.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseErrorsPagination"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseErrorsPagination</b></span>
+                        <a href="#mapResponseErrorsPagination"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseErrorsPagination(dto: <a href="../interfaces/PaginationErrorsRuleDto.html" target="_self">PaginationErrorsRuleDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea los errores de respuesta de la paginación de un DTO a un modelo de reglas de errores de paginación.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/PaginationErrorsRuleDto.html" target="_self" >PaginationErrorsRuleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El DTO de reglas de errores de paginación a mapear.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/PaginationErrorsRuleModel.html" target="_self" >PaginationErrorsRuleModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El modelo de reglas de errores de paginación mapeado.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseErrorsReports"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseErrorsReports</b></span>
+                        <a href="#mapResponseErrorsReports"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseErrorsReports(dto: <a href="../interfaces/DaumErrorsDto.html" target="_self">DaumErrorsDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea los errores de respuesta del DTO a un modelo de errores de Daum.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/DaumErrorsDto.html" target="_self" >DaumErrorsDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto DTO que contiene los errores de respuesta.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/DaumErrorsModel.html" target="_self" >DaumErrorsModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El modelo de errores de Daum mapeado.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseErrorsReportsApiToDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseErrorsReportsApiToDomain</b></span>
+                        <a href="#mapResponseErrorsReportsApiToDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseErrorsReportsApiToDomain(dto: <a href="../interfaces/ErrorsReportsResponseDto.html" target="_self">ErrorsReportsResponseDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea los errores de respuesta de la API de informes al dominio de la respuesta de errores de informes.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ErrorsReportsResponseDto.html" target="_self" >ErrorsReportsResponseDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto DTO de la respuesta de errores de informes.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/ErrorsReportsResponseModel.html" target="_self" >ErrorsReportsResponseModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El modelo de respuesta de errores de informes mapeado al dominio.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseErrorsReportsDataApiToDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseErrorsReportsDataApiToDomain</b></span>
+                        <a href="#mapResponseErrorsReportsDataApiToDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseErrorsReportsDataApiToDomain(dto: <a href="../interfaces/ErrorsDto.html" target="_self">ErrorsDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="90"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea los errores de respuesta de la API de datos a un modelo de errores del dominio.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ErrorsDto.html" target="_self" >ErrorsDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto DTO que contiene los datos de los errores de respuesta.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/ErrorsModel.html" target="_self" >ErrorsModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un objeto de tipo ErrorsModel que representa los errores mapeados del dominio.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseFileReportsDataApiToDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseFileReportsDataApiToDomain</b></span>
+                        <a href="#mapResponseFileReportsDataApiToDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseFileReportsDataApiToDomain(dto: <a href="../interfaces/DownloadFormatResponseDto.html" target="_self">DownloadFormatResponseDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="208"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:208</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte los datos de respuesta de la API en un modelo de respuesta de formato de descarga.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/DownloadFormatResponseDto.html" target="_self" >DownloadFormatResponseDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto DTO que contiene los datos de respuesta de la API.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/DownloadFormatResponseModel.html" target="_self" >DownloadFormatResponseModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El modelo de respuesta de formato de descarga.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseFilesBIReports"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseFilesBIReports</b></span>
+                        <a href="#mapResponseFilesBIReports"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseFilesBIReports(dto: <a href="../interfaces/ParameterDto.html" target="_self">ParameterDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="222"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:222</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea los datos de un objeto ParameterDto a un objeto ParameterModel.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ParameterDto.html" target="_self" >ParameterDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto ParameterDto que se va a mapear.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/ParameterModel.html" target="_self" >ParameterModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El objeto ParameterModel mapeado.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponsePagination"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponsePagination</b></span>
+                        <a href="#mapResponsePagination"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponsePagination(dto: <a href="../interfaces/PaginationRuleDto.html" target="_self">PaginationRuleDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea un objeto de tipo PaginationRuleDto a un objeto de tipo PaginationRuleModel.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/PaginationRuleDto.html" target="_self" >PaginationRuleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto de tipo PaginationRuleDto a mapear.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/PaginationRuleModel.html" target="_self" >PaginationRuleModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El objeto de tipo PaginationRuleModel mapeado.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseReports"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseReports</b></span>
+                        <a href="#mapResponseReports"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseReports(dto: <a href="../interfaces/DaumDto.html" target="_self">DaumDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea un objeto DTO de Daum a un objeto modelo de Daum.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/DaumDto.html" target="_self" >DaumDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto DTO de Daum a mapear.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/DaumModel.html" target="_self" >DaumModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El objeto modelo de Daum mapeado.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseReportsApiToDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseReportsApiToDomain</b></span>
+                        <a href="#mapResponseReportsApiToDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseReportsApiToDomain(dto: <a href="../interfaces/ReportsResponseDto.html" target="_self">ReportsResponseDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un objeto DTO de respuesta de informes en un modelo de respuesta de informes del dominio.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ReportsResponseDto.html" target="_self" >ReportsResponseDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto DTO de respuesta de informes a mapear.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/ReportsResponseModel.html" target="_self" >ReportsResponseModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El modelo de respuesta de informes del dominio.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapResponseReportsDataApiToDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>mapResponseReportsDataApiToDomain</b></span>
+                        <a href="#mapResponseReportsDataApiToDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapResponseReportsDataApiToDomain(dto: <a href="../interfaces/ProcessesDto.html" target="_self">ProcessesDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte los datos de respuesta de la API en un objeto de dominio de ProcessesModel.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ProcessesDto.html" target="_self" >ProcessesDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Los datos de respuesta de la API a mapear.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/ProcessesModel.html" target="_self" >ProcessesModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un objeto ProcessesModel que representa los datos de respuesta mapeados.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadFileFromApiToDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>uploadFileFromApiToDomain</b></span>
+                        <a href="#uploadFileFromApiToDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>uploadFileFromApiToDomain(dto: <a href="../interfaces/UploadFileResponseDto.html" target="_self">UploadFileResponseDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="192"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:192</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un objeto de tipo UploadFileResponseDto en un objeto de tipo UploadFileResponseModel.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/UploadFileResponseDto.html" target="_self" >UploadFileResponseDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto de tipo UploadFileResponseDto que se va a convertir.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/UploadFileResponseModel.html" target="_self" >UploadFileResponseModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El objeto de tipo UploadFileResponseModel convertido.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadTypeOfCashFileFromApiToDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>uploadTypeOfCashFileFromApiToDomain</b></span>
+                        <a href="#uploadTypeOfCashFileFromApiToDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>uploadTypeOfCashFileFromApiToDomain(dto: <a href="../interfaces/FileRequestDto.html" target="_self">FileRequestDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="176"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:176</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un objeto de tipo FileRequestDto en un objeto de tipo FileRequestModel.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/FileRequestDto.html" target="_self" >FileRequestDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto de tipo FileRequestDto que se va a convertir.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/FileRequestModel.html" target="_self" >FileRequestModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El objeto de tipo FileRequestModel convertido.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadTypeOfCashFileFromDomainToApi"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>uploadTypeOfCashFileFromDomainToApi</b></span>
+                        <a href="#uploadTypeOfCashFileFromDomainToApi"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>uploadTypeOfCashFileFromDomainToApi(model: <a href="../classes/FileRequestModel.html" target="_self">FileRequestModel</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un modelo de solicitud de archivo de dominio en un DTO de solicitud de archivo.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>model</td>
+                                            <td>
+                                                            <code><a href="../classes/FileRequestModel.html" target="_self" >FileRequestModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El modelo de solicitud de archivo de dominio.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/FileRequestDto.html" target="_self" >FileRequestDto</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El DTO de solicitud de archivo.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadTypeOfCashFromApiToDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>uploadTypeOfCashFromApiToDomain</b></span>
+                        <a href="#uploadTypeOfCashFromApiToDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>uploadTypeOfCashFromApiToDomain(dto: <a href="../interfaces/UploadtypeOfCashRequestDto.html" target="_self">UploadtypeOfCashRequestDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="163"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:163</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un objeto DTO de solicitud de tipo de efectivo de la API en un modelo de solicitud de tipo de efectivo del dominio.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/UploadtypeOfCashRequestDto.html" target="_self" >UploadtypeOfCashRequestDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El objeto DTO de solicitud de tipo de efectivo de la API.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/UploadtypeOfCashRequestModel.html" target="_self" >UploadtypeOfCashRequestModel</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El modelo de solicitud de tipo de efectivo del dominio.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadTypeOfCashFromDomainToApi"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>uploadTypeOfCashFromDomainToApi</b></span>
+                        <a href="#uploadTypeOfCashFromDomainToApi"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>uploadTypeOfCashFromDomainToApi(model: <a href="../classes/UploadtypeOfCashRequestModel.html" target="_self">UploadtypeOfCashRequestModel</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="136"
+                                    class="link-to-prism">src/app/core/mappers/reports.mapper.ts:136</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un modelo de solicitud de tipo de efectivo del dominio a un DTO de solicitud de tipo de efectivo para la API.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>model</td>
+                                            <td>
+                                                            <code><a href="../classes/UploadtypeOfCashRequestModel.html" target="_self" >UploadtypeOfCashRequestModel</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El modelo de solicitud de tipo de efectivo del dominio.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/UploadtypeOfCashRequestDto.html" target="_self" >UploadtypeOfCashRequestDto</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El DTO de solicitud de tipo de efectivo para la API.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FileRequestDto, UploadFileResponseDto, UploadtypeOfCashRequestDto } from &#x27;./../../infrastructure/dto/uploadPresettlement.dto&#x27;;
+import { DaumDto, PaginationRuleDto, ProcessesDto, ReportsResponseDto } from &quot;src/app/infrastructure/dto/reportsResponse.dto&quot;;
+import { DaumModel, PaginationRuleModel, ProcessesModel, ReportsResponseModel } from &quot;../models/reportsResponse.model&quot;;
+import { DaumErrorsDto, ErrorsDto, ErrorsReportsResponseDto, PaginationErrorsRuleDto } from &quot;src/app/infrastructure/dto/errorsReportsResponse.dto&quot;;
+
+import { ErrorsReportsResponseModel } from &quot;../models/ErrorsReportsResponse.model&quot;;
+import { ErrorsModel } from &quot;../models/ErrorsReportsResponse.model&quot;;
+import { DaumErrorsModel } from &quot;../models/ErrorsReportsResponse.model&quot;;
+import { PaginationErrorsRuleModel } from &quot;../models/ErrorsReportsResponse.model&quot;;
+import { FileRequestModel, UploadFileResponseModel, UploadtypeOfCashRequestModel } from &quot;../models/uploadTypeOfCash.model&quot;;
+import { DownloadFormatResponseDto, ParameterDto } from &#x27;src/app/infrastructure/dto/downloadFormat.dto&#x27;;
+import { DownloadFormatResponseModel, ParameterModel } from &#x27;../models/downloadFormat.model&#x27;;
+import { TypeModelRequestModel } from &#x27;../models/typeCashRequest.model&#x27;;
+import { TypeModelRequestDto } from &#x27;src/app/infrastructure/dto/TypeModelRequest.dto&#x27;;
+
+export class ReportsMapper {
+
+
+  /**
+   * Convierte un objeto DTO de respuesta de informes en un modelo de respuesta de informes del dominio.
+   *
+   * @param dto - El objeto DTO de respuesta de informes a mapear.
+   * @returns El modelo de respuesta de informes del dominio.
+   */
+  static mapResponseReportsApiToDomain(dto: ReportsResponseDto): ReportsResponseModel {
+    return new ReportsResponseModel(this.mapResponseReportsDataApiToDomain(dto.processes))
+  }
+
+  /**
+   * Convierte los datos de respuesta de la API en un objeto de dominio de ProcessesModel.
+   * @param dto - Los datos de respuesta de la API a mapear.
+   * @returns Un objeto ProcessesModel que representa los datos de respuesta mapeados.
+   */
+  static mapResponseReportsDataApiToDomain(dto: ProcessesDto): ProcessesModel {
+    return new ProcessesModel(
+      dto.data.length &gt; 0 ? dto.data.map((variable) &#x3D;&gt; this.mapResponseReports(variable)) : [], this.mapResponsePagination(dto.pagination))
+  }
+
+
+  /**
+   * Mapea un objeto DTO de Daum a un objeto modelo de Daum.
+   *
+   * @param dto - El objeto DTO de Daum a mapear.
+   * @returns El objeto modelo de Daum mapeado.
+   */
+  static mapResponseReports(dto: DaumDto): DaumModel {
+    return new DaumModel(
+      dto.redemptionProcessId,
+      dto.dateRegister,
+      dto.processType,
+      dto.status,
+      dto.statusId)
+  }
+
+
+  /**
+   * Mapea un objeto de tipo PaginationRuleDto a un objeto de tipo PaginationRuleModel.
+   *
+   * @param dto - El objeto de tipo PaginationRuleDto a mapear.
+   * @returns El objeto de tipo PaginationRuleModel mapeado.
+   */
+  static mapResponsePagination(dto: PaginationRuleDto): PaginationRuleModel {
+    return new PaginationRuleModel(
+      dto.pageSize,
+      dto.pageNumber,
+      dto.totalElements,
+      dto.totalPages)
+  }
+
+
+  ////////////////////mapeo de errores en tipo de cash ////////////////////////
+
+
+  /**
+   * Mapea los errores de respuesta de la API de informes al dominio de la respuesta de errores de informes.
+   *
+   * @param dto - El objeto DTO de la respuesta de errores de informes.
+   * @returns El modelo de respuesta de errores de informes mapeado al dominio.
+   */
+  static mapResponseErrorsReportsApiToDomain(dto: ErrorsReportsResponseDto): ErrorsReportsResponseModel {
+    return new ErrorsReportsResponseModel(this.mapResponseErrorsReportsDataApiToDomain(dto.errors))
+  }
+
+  /**
+   * Mapea los errores de respuesta de la API de datos a un modelo de errores del dominio.
+   *
+   * @param dto - El objeto DTO que contiene los datos de los errores de respuesta.
+   * @returns Un objeto de tipo ErrorsModel que representa los errores mapeados del dominio.
+   */
+  static mapResponseErrorsReportsDataApiToDomain(dto: ErrorsDto): ErrorsModel {
+    return new ErrorsModel(
+      dto.data.length &gt; 0 ? dto.data.map((variable) &#x3D;&gt; this.mapResponseErrorsReports(variable)) : [], this.mapResponsePagination(dto.pagination))
+  }
+
+
+  /**
+   * Mapea los errores de respuesta del DTO a un modelo de errores de Daum.
+   *
+   * @param dto - El objeto DTO que contiene los errores de respuesta.
+   * @returns El modelo de errores de Daum mapeado.
+   */
+  static mapResponseErrorsReports(dto: DaumErrorsDto): DaumErrorsModel {
+    return new DaumErrorsModel(
+      dto.redemptionProcessDetailId,
+      dto.errorDetail,
+      dto.index,
+      dto.identificationNumber,
+      dto.isValid
+    )
+  }
+
+  /**
+   * Mapea los errores de respuesta de la paginación de un DTO a un modelo de reglas de errores de paginación.
+   *
+   * @param dto - El DTO de reglas de errores de paginación a mapear.
+   * @returns El modelo de reglas de errores de paginación mapeado.
+   */
+  static mapResponseErrorsPagination(dto: PaginationErrorsRuleDto): PaginationErrorsRuleModel {
+    return new PaginationErrorsRuleModel(
+      dto.pageSize,
+      dto.pageNumber,
+      dto.totalElements,
+      dto.totalPages)
+  }
+
+
+  /////////////////////////// mapeo de upload de archivo //////////////////////
+
+
+  /**
+   * Convierte un modelo de solicitud de tipo de efectivo del dominio a un DTO de solicitud de tipo de efectivo para la API.
+   *
+   * @param model - El modelo de solicitud de tipo de efectivo del dominio.
+   * @returns El DTO de solicitud de tipo de efectivo para la API.
+   */
+  static uploadTypeOfCashFromDomainToApi(model: UploadtypeOfCashRequestModel): UploadtypeOfCashRequestDto {
+    return {
+      typeOfCash: model.TypeOfCash,
+      file: ReportsMapper.uploadTypeOfCashFileFromDomainToApi(model.File)
+    };
+  }
+
+  /**
+   * Convierte un modelo de solicitud de archivo de dominio en un DTO de solicitud de archivo.
+   *
+   * @param model - El modelo de solicitud de archivo de dominio.
+   * @returns El DTO de solicitud de archivo.
+   */
+  static uploadTypeOfCashFileFromDomainToApi(model: FileRequestModel): FileRequestDto {
+    return {
+      name: model.Name,
+      extension: model.Extension,
+      data: model.Data
+    };
+  }
+
+  /**
+   * Convierte un objeto DTO de solicitud de tipo de efectivo de la API en un modelo de solicitud de tipo de efectivo del dominio.
+   *
+   * @param dto - El objeto DTO de solicitud de tipo de efectivo de la API.
+   * @returns El modelo de solicitud de tipo de efectivo del dominio.
+   */
+  static uploadTypeOfCashFromApiToDomain(dto: UploadtypeOfCashRequestDto): UploadtypeOfCashRequestModel {
+    return new UploadtypeOfCashRequestModel(
+      dto.typeOfCash,
+      ReportsMapper.uploadTypeOfCashFileFromApiToDomain(dto.file)
+    );
+  }
+
+  /**
+   * Convierte un objeto de tipo FileRequestDto en un objeto de tipo FileRequestModel.
+   *
+   * @param dto - El objeto de tipo FileRequestDto que se va a convertir.
+   * @returns El objeto de tipo FileRequestModel convertido.
+   */
+  static uploadTypeOfCashFileFromApiToDomain(dto: FileRequestDto): FileRequestModel {
+    return new FileRequestModel(
+      dto.name,
+      dto.extension,
+      dto.data
+    );
+  }
+
+
+
+  /**
+   * Convierte un objeto de tipo UploadFileResponseDto en un objeto de tipo UploadFileResponseModel.
+   *
+   * @param dto - El objeto de tipo UploadFileResponseDto que se va a convertir.
+   * @returns El objeto de tipo UploadFileResponseModel convertido.
+   */
+  static uploadFileFromApiToDomain(dto: UploadFileResponseDto): UploadFileResponseModel {
+    return {
+      RedemptionProcessId: dto.redemptionProcessId
+    }
+  }
+
+
+  ///////////////////////// upload file to domain ////////////////
+
+
+  /**
+   * Convierte los datos de respuesta de la API en un modelo de respuesta de formato de descarga.
+   *
+   * @param dto - El objeto DTO que contiene los datos de respuesta de la API.
+   * @returns El modelo de respuesta de formato de descarga.
+   */
+  static mapResponseFileReportsDataApiToDomain(dto: DownloadFormatResponseDto): DownloadFormatResponseModel {
+    return new DownloadFormatResponseModel(
+      dto.parametersList.length &gt; 0
+        ? dto.parametersList.map((variable: ParameterDto) &#x3D;&gt; this.mapResponseFilesBIReports(variable))
+        : []
+    );
+  }
+
+  /**
+   * Mapea los datos de un objeto ParameterDto a un objeto ParameterModel.
+   *
+   * @param dto - El objeto ParameterDto que se va a mapear.
+   * @returns El objeto ParameterModel mapeado.
+   */
+  static mapResponseFilesBIReports(dto: ParameterDto): ParameterModel {
+    return new ParameterModel(
+      dto.parameterId,
+      dto.programId,
+      dto.conceptId,
+      dto.parameterName,
+      dto.parameterValue
+    );
+  }
+
+  ///////////////////////////////////////////////
+
+  /**
+   * Convierte un objeto de dominio de tipo TypeModelRequestModel a un objeto de tipo TypeModelRequestDto para la API.
+   *
+   * @param data - El objeto de dominio de tipo TypeModelRequestModel a convertir.
+   * @returns El objeto de tipo TypeModelRequestDto convertido.
+   */
+  static fromDomainToApiTypeCash(data: TypeModelRequestModel): TypeModelRequestDto {
+    return {
+      redemptionProcessId: data.RedemptionProcessId,
+      pageNumber: data.PageNumber,
+      pageSize: data.PageSize
+
+    }
+  }
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'ReportsMapper.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

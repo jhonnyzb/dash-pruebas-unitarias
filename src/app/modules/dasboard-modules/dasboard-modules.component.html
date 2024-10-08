@@ -1,0 +1,34 @@
+<div class="navbarmain">
+  <div class="navbarmain__container" [ngClass]="{'navbarmain__container--admin': !isWebResponsive}">
+    <div *ngIf="isWebResponsive" class="navbarmain__bar buttonBarHeader">
+      <span class="bold-16 navbarmain__textwhite">Informes</span>
+    </div>
+
+    <div *ngIf="isWebResponsive" class="navbarmain__tabs">
+      <div class="navbarboards navbarboards__webres">
+        <!-- Tabs existentes -->
+        <div routerLink="/main/dashboard/monitoring-report" class="navbarboards__tab navbarboards__tabbackground"
+          [ngClass]="{'navbarboards__tab--affiliate': tabActiveAdmin === 'monitoring'}" (click)="sendGtmDashboard('Informe de Seguimiento')">
+          <span class="regular-18 navbarboards__text"
+            [ngClass]="{'navbarboards__text--active': tabActiveAdmin === 'monitoring'}">Informe de
+            seguimiento</span>
+        </div>
+        <div routerLink="/main/dashboard/finally-report" class="navbarboards__tab navbarboards__tabbackground"
+          [ngClass]="{'navbarboards__tab--affiliate': tabActiveAdmin === 'finally'}" (click)="sendGtmDashboard('Informe Final')">
+          <span class="regular-18 navbarboards__text"
+            [ngClass]="{'navbarboards__text--active': tabActiveAdmin === 'finally'}">Informe
+            final</span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!isWebResponsive" class="navbarboards">
+      <div *ngFor="let item of reportMenu" [routerLink]="item.path" class="navbarboards__tab"
+        [ngClass]="{'navbarboards__tab--activeadmin': tabActive === item.pageId}">
+        <span class="regular-14 navbarboards__text" routerLinkActive="navbarboards__text--active"
+          [ngClass]="{'navbarboards__text--active': tabActive === item.pageId}">{{item.pageName}}</span>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
